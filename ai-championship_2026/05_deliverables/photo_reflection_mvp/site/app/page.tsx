@@ -107,20 +107,22 @@ async function removeMetadata(file: File): Promise<LocalPhoto> {
   };
 }
 
-async function postReflection(body: Record<string, unknown>) {
+async function postReflection<T>(body: Record<string, unknown>): Promise<T> {
   const response = await fetch("/api/reflect", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
-  const value = await response.json().catch(() => null);
+  const value = await response.json().catch(() => null) as {
+    error?: { message?: string; code?: string };
+  } | null;
   if (!response.ok) {
     const message = value?.error?.message || "AI 작업을 완료하지 못했습니다.";
     const error = new Error(message) as Error & { code?: string };
     error.code = value?.error?.code;
     throw error;
   }
-  return value;
+  return value as T;
 }
 
 export default function Home() {
@@ -233,7 +235,7 @@ export default function Home() {
     setMessage("");
 
     try {
-      const value = await postReflection({
+      const value = await postReflection<{ analysis: ReflectionAnalysis }>({
         action: "analyze",
         photos: photos.map((photo, index) => ({
           id: photoId(index),
@@ -264,7 +266,7 @@ export default function Home() {
     }));
 
     try {
-      const value = await postReflection({
+      const value = await postReflection<{ diary: DiaryResult }>({
         action: "compose",
         analysis,
         answers: answerPayload,
