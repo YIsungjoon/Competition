@@ -409,3 +409,15 @@
 - 제외 항목: 모든 중첩 `.git`, `node_modules`, `.vinext`, `.next`, `dist`, Wrangler·Sites 로컬 상태, Playwright 임시 상태, Python 캐시, `.DS_Store`, 실제 `.env`, `private_inputs`를 제외했다. `.env.example`은 빈 예시값이므로 포함했다.
 - OBSERVATION: 335개 파일, 약 5.4MB가 첫 커밋에 포함됐고 원격 `main`이 `27eb087`에서 `79d1f4a`로 이동했다. 비밀값 패턴과 50MB 초과 파일은 발견되지 않았다.
 - 한계와 다음 작업: 로컬 프로젝트 루트와 원격 저장소 루트의 경로 구조가 달라 로컬 저장소에 `origin`을 직접 연결하지 않았다. 이후 동기화도 `ai-championship_2026/` 경계를 유지해야 한다.
+
+## WORK-037 — GitHub 연결 Vercel 배포 진단·복구·공개 검증
+
+- 날짜/시각: 2026-09-14 15:45 KST
+- 수행 작업: Vercel 프로젝트 `my-project`의 Root Directory를 실제 앱 폴더로 변경하고, Framework Preset을 `Next.js`, Vercel 전용 Build Command를 `next build --webpack`으로 설정했다. Next.js 타입 검사를 통과하도록 API 응답 타입과 테스트 import 설정을 최소 수정해 커밋 `e1803e9`를 공개 저장소 `main`에 푸시했다.
+- 이유: 저장소 연결과 `Ready` 표시는 있었지만 공개 URL이 404였고, 실제 리소스에는 Cloudflare용 Vinext의 `dist/client`만 있어 Vercel 라우트와 함수가 생성되지 않았기 때문이다. Sites용 기존 빌드를 없애지 않고 호스팅별 명령만 분리하는 것이 가장 작은 수정이었다.
+- 입력/출처: `SRC-099`, `SRC-100`, Vercel 배포 로그·리소스·프로젝트 설정, 로컬 Next.js 빌드.
+- 결과물: `05_deliverables/photo_reflection_mvp/site/app/page.tsx`, `05_deliverables/photo_reflection_mvp/site/tsconfig.json`, GitHub 커밋 `e1803e9`, Vercel 배포 `6uuafTvR9feVr69weCZ78zTjHbpS`.
+- OBSERVATION: 잘못된 상위 Root Directory에서는 2초 `Ready` 뒤 404, 정확한 앱 폴더와 Vinext 빌드에서는 정적 리소스 68개만 생긴 뒤 404, Next.js 프리셋과 기존 빌드 명령 조합에서는 `.next/routes-manifest.json` 부재 오류가 발생했다.
+- OBSERVATION: 최종 Vercel 배포는 46초 뒤 `Ready`가 되었고 공개 URL에서 첫 화면과 합성 예시 사진 4장의 고정 결과·문장 근거를 실제 브라우저로 확인했다.
+- DECISION: 공개 URL은 데모 검토에 사용하되 실제 AI 서비스 완성으로 표시하지 않는다. 샘플에는 기존 `실제 사진 분석 결과가 아님` 고지를 유지하고, 서버 키 설정 뒤 실제 사진 경로를 별도로 통과시킨다. 관련 결정은 `DEC-023`이다.
+- 한계와 다음 작업: Vercel 환경변수에 `OPENAI_API_KEY`가 없어 실제 분석은 아직 작동하지 않는다. 키를 채팅이나 저장소에 넣지 말고 Vercel Secret으로 설정한 뒤 재배포·실사진 품질 검증이 필요하다.

@@ -1,7 +1,7 @@
 # IDEA-051 MVP 구현·검증 보고서
 
 - 날짜: 2026-09-14, Asia/Seoul
-- 상태: 코드·브라우저·빌드·비공개 저장 버전 완료, 실제 AI 키 설정과 배포 보류
+- 상태: 코드·브라우저·빌드·공개 데모 배포 완료, 실제 AI 키 설정과 실제 사진 검증 대기
 - 목적: 제출 마감 전에 `사진 → 기억 질문 3개 → 사용자 답 → 근거 있는 기록` 한 흐름을 실제 서비스 코드로 만든다.
 - 출처: `SRC-078`, `SRC-079`, `SRC-089`~`SRC-092`, `DEC-018`, `DEC-020`, `DEC-021`
 
@@ -51,3 +51,14 @@
 3. 사진 근거 100%, 위험한 인물·감정 단정 0건, 기억 공백 질문 최소 1개, 사용자 미제공 구체 내용 0건을 확인한다.
 4. 동일 소스의 비공개 배포에서 종단간 흐름을 다시 확인한다.
 5. 대회 제출용 접근 범위를 정한 뒤 공개 또는 심사자 접근 링크로 전환한다.
+
+## 후속 Vercel 공개 배포 검증 — 2026-09-14 15:45 KST
+
+- 목적: 사용자가 연결한 GitHub 저장소를 실제 공개 서비스 URL로 만들고, 샘플 화면과 실제 AI 경로의 작동 범위를 분리해 확인한다.
+- 입력: `YIsungjoon/Competition`의 `main`, Vercel 프로젝트 `my-project`, 공개 URL `https://my-project-xi-nine-28.vercel.app/`.
+- OBSERVATION: 최초 Root Directory는 `ai-championship_2026`이어서 Vercel이 2초 만에 빈 배포를 `Ready`로 표시했지만 공개 URL은 `404: NOT_FOUND`였다.
+- OBSERVATION: Root Directory를 `ai-championship_2026/05_deliverables/photo_reflection_mvp/site`로 고치자 Vinext 빌드는 통과했지만 `/` 라우트와 함수 없이 `dist/client` 파일만 정적 리소스로 배포되어 404가 유지됐다.
+- OBSERVATION: Framework Preset을 `Next.js`로 바꾼 첫 빌드는 기존 `npm run build`가 Vinext를 실행해 `.next/routes-manifest.json` 부재로 실패했다.
+- DECISION: Sites용 `npm run build`를 바꾸지 않고 Vercel 프로젝트에만 `next build --webpack`을 지정했다. Next.js 엄격 타입 검사에 필요한 응답 타입과 테스트 import 설정만 고쳐 GitHub 커밋 `e1803e9`로 푸시했다.
+- 검증: 로컬 `npm run lint`, `npm test` 3건, `next build --webpack`이 통과했다. Vercel Production 배포 `6uuafTvR9feVr69weCZ78zTjHbpS`가 `Ready`가 되었고 공개 URL에서 제목 `사진이 묻는 하루`, 첫 화면, 합성 예시 사진 4장의 고정 결과와 문장 근거가 표시됐다.
+- 한계: Vercel 프로젝트 환경변수 목록에는 `OPENAI_API_KEY`가 없었다. 공개 샘플은 작동하지만 개인 사진의 실제 AI 분석은 아직 `503 missing_api_key` 경로이며 실제 모델 품질 증거가 아니다.
