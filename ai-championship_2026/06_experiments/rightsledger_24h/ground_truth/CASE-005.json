@@ -1,0 +1,79 @@
+{
+  "case_id": "CASE-005",
+  "title": "AI landing page with an unrelated source record",
+  "assets": [
+    "README.md",
+    "deliverables/landing_page.zip",
+    "evidence/author/css_authorship.txt",
+    "evidence/license/rounded_type_license.txt",
+    "evidence/model_terms/amber_terms.txt",
+    "evidence/model_terms/ocean_terms.txt",
+    "evidence/prompt/amber_prompt.txt",
+    "evidence/prompt/ocean_prompt.txt",
+    "evidence/source/unrelated_drone_source.txt",
+    "generated/g_amber.png",
+    "generated/g_ocean.png",
+    "lineage/landing_bundle.md",
+    "media/font_z.woff",
+    "notes/provenance_notes.md",
+    "src/landing.css"
+  ],
+  "relations": [
+    {
+      "relation_type": "evidence:author",
+      "from": "src/landing.css",
+      "to": "evidence/author/css_authorship.txt"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "media/font_z.woff",
+      "to": "evidence/license/rounded_type_license.txt"
+    },
+    {
+      "relation_type": "evidence:model_terms",
+      "from": "generated/g_amber.png",
+      "to": "evidence/model_terms/amber_terms.txt"
+    },
+    {
+      "relation_type": "evidence:model_terms",
+      "from": "generated/g_ocean.png",
+      "to": "evidence/model_terms/ocean_terms.txt"
+    },
+    {
+      "relation_type": "evidence:prompt",
+      "from": "generated/g_amber.png",
+      "to": "evidence/prompt/amber_prompt.txt"
+    },
+    {
+      "relation_type": "evidence:prompt",
+      "from": "generated/g_ocean.png",
+      "to": "evidence/prompt/ocean_prompt.txt"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/landing_page.zip",
+      "to": "generated/g_amber.png"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/landing_page.zip",
+      "to": "generated/g_ocean.png"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/landing_page.zip",
+      "to": "media/font_z.woff"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/landing_page.zip",
+      "to": "src/landing.css"
+    }
+  ],
+  "missing_evidence": [
+    {
+      "asset": "media/font_z.woff",
+      "evidence_type": "source"
+    }
+  ]
+}

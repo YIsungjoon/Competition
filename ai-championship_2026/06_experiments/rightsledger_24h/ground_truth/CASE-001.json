@@ -1,0 +1,79 @@
+{
+  "case_id": "CASE-001",
+  "title": "explicit path control",
+  "assets": [
+    "README.md",
+    "audio/calm_piano.wav",
+    "deliverables/launch_video.mp4",
+    "evidence/license/hero_license.txt",
+    "evidence/license/piano_license.txt",
+    "evidence/license/player_license.txt",
+    "evidence/model_terms/tagline_terms.txt",
+    "evidence/prompt/tagline_prompt.txt",
+    "evidence/receipt/piano_receipt.txt",
+    "evidence/source/hero_source.txt",
+    "evidence/source/player_source.txt",
+    "generated/tagline.png",
+    "lineage/launch_video.md",
+    "media/hero_skyline.png",
+    "src/player.js"
+  ],
+  "relations": [
+    {
+      "relation_type": "evidence:license",
+      "from": "audio/calm_piano.wav",
+      "to": "evidence/license/piano_license.txt"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "media/hero_skyline.png",
+      "to": "evidence/license/hero_license.txt"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "src/player.js",
+      "to": "evidence/license/player_license.txt"
+    },
+    {
+      "relation_type": "evidence:model_terms",
+      "from": "generated/tagline.png",
+      "to": "evidence/model_terms/tagline_terms.txt"
+    },
+    {
+      "relation_type": "evidence:prompt",
+      "from": "generated/tagline.png",
+      "to": "evidence/prompt/tagline_prompt.txt"
+    },
+    {
+      "relation_type": "evidence:receipt",
+      "from": "audio/calm_piano.wav",
+      "to": "evidence/receipt/piano_receipt.txt"
+    },
+    {
+      "relation_type": "evidence:source",
+      "from": "media/hero_skyline.png",
+      "to": "evidence/source/hero_source.txt"
+    },
+    {
+      "relation_type": "evidence:source",
+      "from": "src/player.js",
+      "to": "evidence/source/player_source.txt"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/launch_video.mp4",
+      "to": "audio/calm_piano.wav"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/launch_video.mp4",
+      "to": "generated/tagline.png"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/launch_video.mp4",
+      "to": "media/hero_skyline.png"
+    }
+  ],
+  "missing_evidence": []
+}

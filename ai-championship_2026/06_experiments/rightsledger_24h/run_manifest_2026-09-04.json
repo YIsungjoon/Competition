@@ -1,0 +1,49 @@
+{
+  "experiment_id": "EXP-RL-20260904-01",
+  "recorded_at": "2026-09-04T14:36:02+09:00",
+  "timezone": "Asia/Seoul",
+  "scope": "relation_linker_component_spike",
+  "candidate": "IDEA-033 RightsLedger",
+  "code": {
+    "path": "experiment.py",
+    "sha256": "47825e26f69d84e7b72e344d86c5067d3f3d3f7010b46d15108d259a32698b78",
+    "hash_scope": "script state at EXP-RL-20260904-01; the working script was later extended for EXP-RL-20260904-02",
+    "python": "3.14.5",
+    "external_dependencies": []
+  },
+  "model": {
+    "runtime": "Ollama",
+    "name": "bge-m3:latest",
+    "local_model_id": "790764642607",
+    "embedding_dimensions_observed": 1024,
+    "external_data_transmission": false
+  },
+  "data": {
+    "synthetic_cases": 5,
+    "auditable_files_per_case": 15,
+    "auditable_files_total": 75,
+    "primary_subject_assets_per_case": 5,
+    "intentional_missing_evidence_total": 4
+  },
+  "fixed_thresholds": {
+    "minimum_similarity": 0.58,
+    "minimum_top_two_margin": 0.025
+  },
+  "commands": [
+    "python3 experiment.py generate",
+    "python3 experiment.py self-check",
+    "python3 experiment.py run --mode deterministic",
+    "python3 experiment.py run --mode hybrid --ollama-url http://127.0.0.1:11434",
+    "python3 experiment.py compare"
+  ],
+  "result": {
+    "component_technical_verdict": "pass",
+    "overall_verdict": "component_pass_full_24h_gate_incomplete",
+    "candidate_status": "retain_for_blind_validation_not_selected"
+  },
+  "protocol_deviations": [
+    "The baseline was exact path and filename matching, not the preregistered general-LLM checklist.",
+    "Each case contained 15 auditable files but only 5 primary subject assets.",
+    "C2PA, real media understanding, and human completion time were not tested."
+  ]
+}

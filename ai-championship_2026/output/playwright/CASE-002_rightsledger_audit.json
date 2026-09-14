@@ -1,0 +1,246 @@
+{
+  "schema": "rightsledger.audit.v0.1",
+  "analysis_id": "RL-2eae26426903",
+  "reviewed_at": "2026-09-07T02:15:39.388Z",
+  "reviewer_id": "P01",
+  "app_version": "0.1.0",
+  "ai": {
+    "provider": "local_ollama",
+    "model": "bge-m3:latest",
+    "semantic_tasks": 11,
+    "embedding_links": 10,
+    "deterministic_links": 0,
+    "thresholds": {
+      "min_similarity": 0.58,
+      "min_margin": 0.025
+    },
+    "fallback_used": false
+  },
+  "inventory": [
+    {
+      "path": "README.md",
+      "size": 72,
+      "sha256": "9e0c41b96f7dd323f21b9d2566df01974e0e6c487ee454e39b310469656ba4a8",
+      "declared_asset": false
+    },
+    {
+      "path": "audio/track_final.wav",
+      "size": 83,
+      "sha256": "fd3bf73c5f342b734cce0316c8742483ce00e46cd8735af05c83aaa50ac8617d",
+      "declared_asset": true
+    },
+    {
+      "path": "deliverables/reel_v7.mp4",
+      "size": 104,
+      "sha256": "62030d703365a3b5e76c0bd810a309dda19801d9cda134354d7935496f7b5104",
+      "declared_asset": true
+    },
+    {
+      "path": "evidence/license/chart_mit.txt",
+      "size": 65,
+      "sha256": "e37d519775d98e0ded3dafbf9d28c4096f26d454f24811888c86f750c403d918",
+      "declared_asset": false
+    },
+    {
+      "path": "evidence/license/percussion_terms.txt",
+      "size": 71,
+      "sha256": "82bfd95e9a378ba19a104e634bcc11532699886139cd466c89d5404058baec38",
+      "declared_asset": false
+    },
+    {
+      "path": "evidence/license/street_photo_permission.txt",
+      "size": 64,
+      "sha256": "6be76ae09eb10f9c077630be4f67204637b36bbf18538e94f56b003ea10eaa15",
+      "declared_asset": false
+    },
+    {
+      "path": "evidence/prompt/narration_prompt.txt",
+      "size": 94,
+      "sha256": "3c5ecdd1dbec1b226fae53b88a7ca58a2f82ddf3732790592567ffc7b40aef06",
+      "declared_asset": false
+    },
+    {
+      "path": "evidence/receipt/rhythm_order.txt",
+      "size": 66,
+      "sha256": "aa5da089bd27c2d62d126d91c88e49f1cc2f4a2847626285a8a46360bb8c3375",
+      "declared_asset": false
+    },
+    {
+      "path": "evidence/source/chart_upstream.txt",
+      "size": 62,
+      "sha256": "5b010f902b0cd9849a6739993ec8029d04c92c18160aa7044041e6ee42ac85fe",
+      "declared_asset": false
+    },
+    {
+      "path": "evidence/source/night_market_origin.txt",
+      "size": 76,
+      "sha256": "737f2fe0c7cf1ffd8b7b3c9051d0a1ad829217dfa0676098cbb841ff52e850d5",
+      "declared_asset": false
+    },
+    {
+      "path": "generated/voice_take.wav",
+      "size": 85,
+      "sha256": "4e748a4ce000dca97baa28901160d1176aa12e23296b52ce919c5e0c9bab82e7",
+      "declared_asset": true
+    },
+    {
+      "path": "lineage/reel_notes.md",
+      "size": 284,
+      "sha256": "145ec14ee4ff9b0ec4cefb10ec50fa50cfedc46326d39b6b530507f94eb388f2",
+      "declared_asset": false
+    },
+    {
+      "path": "media/img_1042.png",
+      "size": 80,
+      "sha256": "adb8579cef86a3c61c0fed3c2394b8755d2a4ecad94d0e0ec7508220cfa3323d",
+      "declared_asset": true
+    },
+    {
+      "path": "notes/edit_log.md",
+      "size": 59,
+      "sha256": "838ef78916a18d82c4de15f505744051ef5a9bef10b94ce46d0bac4c11c194ac",
+      "declared_asset": false
+    },
+    {
+      "path": "src/lib_a.js",
+      "size": 81,
+      "sha256": "9d09c7f186fc680ae28a40a772625de247421c7ee42b1205f99759007419771f",
+      "declared_asset": true
+    }
+  ],
+  "subjects": [
+    {
+      "path": "media/img_1042.png",
+      "description": "neon-lit evening food market photographed at street level",
+      "origin_type": "third_party_free"
+    },
+    {
+      "path": "audio/track_final.wav",
+      "description": "energetic hand-drum rhythm purchased for a short social reel",
+      "origin_type": "purchased"
+    },
+    {
+      "path": "src/lib_a.js",
+      "description": "bar chart component adapted from the OpenPlot Mini library",
+      "origin_type": "open_source"
+    },
+    {
+      "path": "generated/voice_take.wav",
+      "description": "synthetic Korean narrator saying the weekend market invitation",
+      "origin_type": "ai_generated"
+    },
+    {
+      "path": "deliverables/reel_v7.mp4",
+      "description": "vertical weekend-market reel with night street, drums, chart and Korean narration",
+      "origin_type": "output"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "evidence:license",
+      "from": "media/img_1042.png",
+      "to": "evidence/license/street_photo_permission.txt",
+      "original_method": "embedding",
+      "reviewer_decision": "accepted"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "src/lib_a.js",
+      "to": "evidence/license/chart_mit.txt",
+      "original_method": "embedding",
+      "reviewer_decision": "accepted"
+    },
+    {
+      "relation_type": "evidence:prompt",
+      "from": "generated/voice_take.wav",
+      "to": "evidence/prompt/narration_prompt.txt",
+      "original_method": "embedding",
+      "reviewer_decision": "accepted"
+    },
+    {
+      "relation_type": "evidence:receipt",
+      "from": "audio/track_final.wav",
+      "to": "evidence/receipt/rhythm_order.txt",
+      "original_method": "embedding",
+      "reviewer_decision": "accepted"
+    },
+    {
+      "relation_type": "evidence:source",
+      "from": "media/img_1042.png",
+      "to": "evidence/source/night_market_origin.txt",
+      "original_method": "embedding",
+      "reviewer_decision": "accepted"
+    },
+    {
+      "relation_type": "evidence:source",
+      "from": "src/lib_a.js",
+      "to": "evidence/source/chart_upstream.txt",
+      "original_method": "embedding",
+      "reviewer_decision": "accepted"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/reel_v7.mp4",
+      "to": "audio/track_final.wav",
+      "original_method": "embedding",
+      "reviewer_decision": "accepted"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/reel_v7.mp4",
+      "to": "generated/voice_take.wav",
+      "original_method": "embedding",
+      "reviewer_decision": "accepted"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/reel_v7.mp4",
+      "to": "media/img_1042.png",
+      "original_method": "embedding",
+      "reviewer_decision": "accepted"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/reel_v7.mp4",
+      "to": "src/lib_a.js",
+      "original_method": "embedding",
+      "reviewer_decision": "accepted"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "audio/track_final.wav",
+      "to": "evidence/license/percussion_terms.txt",
+      "original_method": "manual_from_unresolved",
+      "reviewer_decision": "accepted"
+    }
+  ],
+  "missing_evidence": [
+    {
+      "asset": "generated/voice_take.wav",
+      "evidence_type": "model_terms"
+    }
+  ],
+  "unresolved": [],
+  "c2pa": [
+    {
+      "path": "media/img_1042.png",
+      "manifest_presence": "unknown",
+      "integrity_state": "unknown",
+      "signer_trust_state": "unknown",
+      "validation_codes": [],
+      "rights_permission_state": "not_evaluated",
+      "tool_state": "unsupported_or_unreadable"
+    },
+    {
+      "path": "deliverables/reel_v7.mp4",
+      "manifest_presence": "unknown",
+      "integrity_state": "unknown",
+      "signer_trust_state": "unknown",
+      "validation_codes": [],
+      "rights_permission_state": "not_evaluated",
+      "tool_state": "unsupported_or_unreadable"
+    }
+  ],
+  "legal_conclusions": [],
+  "interpretation_boundary": "관계와 누락은 검토 후보이며 법률상 권리 보유 또는 제출 가능 결론이 아닙니다. C2PA 무결성·서명자 신뢰·권리 증거는 서로 다른 상태입니다."
+}

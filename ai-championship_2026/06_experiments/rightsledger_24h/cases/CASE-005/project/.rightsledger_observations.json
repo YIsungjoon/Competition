@@ -1,0 +1,29 @@
+{
+  "subjects": [
+    {
+      "path": "generated/g_amber.png",
+      "description": "AI-generated amber glass bottle product render on white",
+      "origin_type": "ai_generated"
+    },
+    {
+      "path": "generated/g_ocean.png",
+      "description": "AI-generated blue ocean texture used as a background",
+      "origin_type": "ai_generated"
+    },
+    {
+      "path": "media/font_z.woff",
+      "description": "rounded display typeface used for the product headline",
+      "origin_type": "third_party_free"
+    },
+    {
+      "path": "src/landing.css",
+      "description": "landing-page layout styles written by the project team",
+      "origin_type": "original"
+    },
+    {
+      "path": "deliverables/landing_page.zip",
+      "description": "landing page with amber bottle, ocean background, rounded headline and custom CSS",
+      "origin_type": "output"
+    }
+  ]
+}

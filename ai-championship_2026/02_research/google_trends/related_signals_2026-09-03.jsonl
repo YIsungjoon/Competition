@@ -1,0 +1,37 @@
+{"record_type":"curated_related_query","source_id":"SRC-002","parent_term":"전세사기","query":"대한법률구조공단","growth_label":"+200%","selection_reason":"피해 해결 기관을 찾는 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-002","parent_term":"전세사기","query":"국토교통부","growth_label":"+200%","selection_reason":"공식 정보와 지원을 찾는 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-002","parent_term":"전세사기","query":"전세 사기 사례","growth_label":"+180%","selection_reason":"사례 비교를 통한 위험 판별 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-002","parent_term":"전세사기","query":"전세 사기 예방","growth_label":"+180%","selection_reason":"사전 예방 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-002","parent_term":"전세사기","query":"전세 사기 피해자 지원","growth_label":"+120%","selection_reason":"피해 이후 지원 탐색 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-003","parent_term":"누수","query":"누수 탐지 업체","growth_label":"+90%","selection_reason":"진단 후 업체 연결이라는 명확한 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-003","parent_term":"누수","query":"일상생활배상책임보험","growth_label":"+50%","selection_reason":"책임·보험 처리 정보 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-004","parent_term":"스미싱","query":"택배 문자 스미싱","growth_label":"+250%","selection_reason":"사용자가 실제로 판별하려는 구체적 메시지 유형"}
+{"record_type":"curated_related_query","source_id":"SRC-004","parent_term":"스미싱","query":"택배 스미싱","growth_label":"+130%","selection_reason":"사용자가 실제로 판별하려는 구체적 메시지 유형"}
+{"record_type":"curated_related_query","source_id":"SRC-004","parent_term":"스미싱","query":"스미싱 신고","growth_label":"+80%","selection_reason":"판별 이후 신고 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-004","parent_term":"스미싱","query":"보호나라","growth_label":"+70%","selection_reason":"공식 보안 지원 탐색 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-004","parent_term":"중고거래 사기","query":"더치트 사기 조회","growth_label":"+80%","selection_reason":"거래 전 위험 조회 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-004","parent_term":"중고거래 사기","query":"중고나라 사기 신고","growth_label":"+60%","selection_reason":"피해 신고 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-005","parent_term":"간병","query":"케어닥","growth_label":"+200%","selection_reason":"돌봄 서비스 탐색 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-005","parent_term":"간병","query":"요양병원","growth_label":"+80%","selection_reason":"돌봄 선택지 비교 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-005","parent_term":"간병","query":"간병인 보험","growth_label":"+60%","selection_reason":"돌봄 비용과 위험 관리 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-005","parent_term":"불면증","query":"불면증 치료 방법","growth_label":"+160%","selection_reason":"해결 방법 탐색 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-005","parent_term":"불면증","query":"불면증 해결","growth_label":"+60%","selection_reason":"해결 방법 탐색 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-005","parent_term":"우울증","query":"고기능 우울증","growth_label":"+850%","selection_reason":"기존 분류로 포착되지 않는 상태에 대한 이해 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-006","parent_term":"자소서","query":"클로드 자소서","growth_label":"+650%","selection_reason":"AI를 이용한 취업 문서 작성 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-006","parent_term":"자소서","query":"자소서 AI 추천","growth_label":"+350%","selection_reason":"AI를 이용한 취업 문서 작성 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-006","parent_term":"면접","query":"면접 준비 방법","growth_label":"+130%","selection_reason":"명확한 준비 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-006","parent_term":"면접","query":"AI 역량 검사 면접 질문 리스트","growth_label":"+120%","selection_reason":"구체적인 AI 면접 대비 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-006","parent_term":"직장내 괴롭힘","query":"직장 내 괴롭힘 예방 대응 매뉴얼","growth_label":"+450%","selection_reason":"대응 절차를 찾는 강한 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-006","parent_term":"직장내 괴롭힘","query":"고용노동부","growth_label":"+300%","selection_reason":"공식 기관 및 절차 탐색 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-006","parent_term":"직장내 괴롭힘","query":"근로기준법","growth_label":"+200%","selection_reason":"법적 기준 확인 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-007","parent_term":"건설 안전","query":"산업안전포털","growth_label":"+170%","selection_reason":"공식 안전 정보 탐색 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-007","parent_term":"하자보수","query":"민법","growth_label":"+350%","selection_reason":"분쟁의 법적 근거 탐색 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-007","parent_term":"하자보수","query":"공동주택관리법","growth_label":"+110%","selection_reason":"하자 책임의 법적 기준 탐색 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-007","parent_term":"하자보수","query":"건설산업기본법","growth_label":"+60%","selection_reason":"하자 책임의 법적 기준 탐색 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-008","parent_term":"논문 요약","query":"유튜브 요약","growth_label":"+130%","selection_reason":"긴 콘텐츠를 짧게 이해하려는 인접 수요; 직접 관련성은 낮음","quality_flag":"adjacent_not_direct"}
+{"record_type":"curated_related_query","source_id":"SRC-009","parent_term":"소상공인","query":"소상공인 AI 활용 지원 사업","growth_label":"급등","selection_reason":"소상공인의 AI 활용 자체에 대한 신규 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-009","parent_term":"부가세","query":"부가세 과세표준증명원 발급 방법","growth_label":"+250%","selection_reason":"명확한 행정 절차 탐색 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-009","parent_term":"부가세","query":"매입세액공제","growth_label":"+50%","selection_reason":"판단이 필요한 세무 규칙 탐색 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-009","parent_term":"사업계획서","query":"예비창업패키지 사업계획서","growth_label":"+140%","selection_reason":"특정 지원사업 제출물 작성 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-009","parent_term":"사업계획서","query":"사업계획서 PDF","growth_label":"+110%","selection_reason":"예시와 형식을 찾는 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-009","parent_term":"사업계획서","query":"사업계획서 목차","growth_label":"+80%","selection_reason":"문서 구조 작성 수요"}

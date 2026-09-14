@@ -1,0 +1,30 @@
+{
+  "schema_version": "2.0",
+  "run_id": "R1-B01-A",
+  "reviewer_id": "R1",
+  "case_id": "B01",
+  "condition": "A|B",
+  "run_order": 1,
+  "condition_output_sha256": "replace_with_sha256",
+  "started_at": "2026-09-07T10:00:00+09:00",
+  "ended_at": "2026-09-07T10:10:00+09:00",
+  "excluded_seconds": 0,
+  "duration_seconds": 600,
+  "final_relations": [
+    {
+      "relation_type": "ingredient|evidence:source|evidence:license|evidence:receipt|evidence:prompt|evidence:model_terms|evidence:author",
+      "from": "output/or/input_asset/path",
+      "to": "input_asset/or/evidence/path"
+    }
+  ],
+  "final_missing_evidence": [
+    {
+      "asset": "replace/with/input_asset.ext",
+      "evidence_type": "source|license|receipt|prompt|model_terms|author"
+    }
+  ],
+  "invalid_path_citations": [],
+  "forbidden_conclusions": [],
+  "completed": false,
+  "notes": ""
+}

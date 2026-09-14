@@ -1,0 +1,79 @@
+{
+  "experiment_id": "EXP-RL-C2PA-20260904-01",
+  "started_at": "2026-09-04T15:20:38+09:00",
+  "tool": {
+    "path": "/opt/homebrew/bin/c2patool",
+    "version": "c2patool 0.27.17"
+  },
+  "source": {
+    "repository": "https://github.com/c2pa-org/public-testfiles",
+    "fixture_path": "legacy/1.4/image/jpeg",
+    "license_file": "samples/raw/LICENSE"
+  },
+  "samples": [
+    {
+      "case_id": "C2PA-ABSENT",
+      "source_file": "samples/raw/adobe-20220124-A.jpg",
+      "sha256": "f999fd78bfe8a83c96e468a078830ba94485bc1bc6fd086fb94a43bd29dd0f23",
+      "expected_state": "no_manifest",
+      "observed_state": "no_manifest",
+      "manifest_presence": "absent",
+      "integrity_state": "not_applicable",
+      "signer_trust_state": "not_applicable",
+      "validation_state_raw": null,
+      "validation_codes": [],
+      "expected_match": true,
+      "duration_seconds": 0.004372,
+      "command": [
+        "/opt/homebrew/bin/c2patool",
+        "/Users/sungjoonyi/Documents/ChatGPT/ai_championship_2026/06_experiments/rightsledger_c2pa/samples/raw/adobe-20220124-A.jpg"
+      ],
+      "returncode": 1
+    },
+    {
+      "case_id": "C2PA-VALID",
+      "source_file": "samples/raw/adobe-20220124-C.jpg",
+      "sha256": "75a8da33f6eaf1e16bf3b42cd78913b22b2e6a671fda217a508b1ba4230ce864",
+      "expected_state": "manifest_valid_with_untrusted_signer",
+      "observed_state": "manifest_valid_with_untrusted_signer",
+      "manifest_presence": "present",
+      "integrity_state": "valid",
+      "signer_trust_state": "untrusted",
+      "validation_state_raw": "Valid",
+      "validation_codes": [
+        "signingCredential.untrusted"
+      ],
+      "expected_match": true,
+      "duration_seconds": 0.006515,
+      "command": [
+        "/opt/homebrew/bin/c2patool",
+        "/Users/sungjoonyi/Documents/ChatGPT/ai_championship_2026/06_experiments/rightsledger_c2pa/samples/raw/adobe-20220124-C.jpg"
+      ],
+      "returncode": 0
+    },
+    {
+      "case_id": "C2PA-INVALID-SIGNATURE",
+      "source_file": "samples/raw/adobe-20220124-E-sig-CA.jpg",
+      "sha256": "0d4c2774f1b7e94b9613bb952b0a76b6a178d22ac6d206d257d2af1376cbbff2",
+      "expected_state": "manifest_invalid",
+      "observed_state": "manifest_invalid",
+      "manifest_presence": "present",
+      "integrity_state": "invalid",
+      "signer_trust_state": "untrusted",
+      "validation_state_raw": "Invalid",
+      "validation_codes": [
+        "claimSignature.mismatch",
+        "signingCredential.untrusted"
+      ],
+      "expected_match": true,
+      "duration_seconds": 0.00613,
+      "command": [
+        "/opt/homebrew/bin/c2patool",
+        "/Users/sungjoonyi/Documents/ChatGPT/ai_championship_2026/06_experiments/rightsledger_c2pa/samples/raw/adobe-20220124-E-sig-CA.jpg"
+      ],
+      "returncode": 0
+    }
+  ],
+  "all_expected_matched": true,
+  "interpretation_boundary": "C2PA state is provenance metadata evidence, not a copyright or license conclusion."
+}

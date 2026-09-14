@@ -1,0 +1,31 @@
+{
+  "case_id": "B01",
+  "created_by": "independent_author_id",
+  "primary_assets": [
+    {
+      "path": "replace/with/asset.ext",
+      "origin_type": "third_party_free|purchased|open_source|ai_generated|original|output"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ingredient|evidence:source|evidence:license|evidence:receipt|evidence:prompt|evidence:model_terms|evidence:author",
+      "from": "result/or/asset/path",
+      "to": "asset/or/evidence/path"
+    }
+  ],
+  "missing_evidence": [
+    {
+      "asset": "replace/with/asset.ext",
+      "evidence_type": "source|license|receipt|prompt|model_terms|author"
+    }
+  ],
+  "c2pa_expected": [
+    {
+      "asset": "replace/with/c2pa_asset.ext",
+      "manifest_present": true,
+      "validation_status": "valid|invalid|absent"
+    }
+  ],
+  "sealed_until": "both_conditions_complete"
+}

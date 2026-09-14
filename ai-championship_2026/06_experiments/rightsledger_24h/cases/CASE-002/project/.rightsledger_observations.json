@@ -1,0 +1,29 @@
+{
+  "subjects": [
+    {
+      "path": "media/img_1042.png",
+      "description": "neon-lit evening food market photographed at street level",
+      "origin_type": "third_party_free"
+    },
+    {
+      "path": "audio/track_final.wav",
+      "description": "energetic hand-drum rhythm purchased for a short social reel",
+      "origin_type": "purchased"
+    },
+    {
+      "path": "src/lib_a.js",
+      "description": "bar chart component adapted from the OpenPlot Mini library",
+      "origin_type": "open_source"
+    },
+    {
+      "path": "generated/voice_take.wav",
+      "description": "synthetic Korean narrator saying the weekend market invitation",
+      "origin_type": "ai_generated"
+    },
+    {
+      "path": "deliverables/reel_v7.mp4",
+      "description": "vertical weekend-market reel with night street, drums, chart and Korean narration",
+      "origin_type": "output"
+    }
+  ]
+}

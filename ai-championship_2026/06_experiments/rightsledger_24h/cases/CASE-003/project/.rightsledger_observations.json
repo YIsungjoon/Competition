@@ -1,0 +1,29 @@
+{
+  "subjects": [
+    {
+      "path": "media/a_17.wav",
+      "description": "standard-tempo gentle acoustic guitar recording selected for the podcast intro",
+      "origin_type": "purchased"
+    },
+    {
+      "path": "media/a_18.wav",
+      "description": "slower alternate gentle acoustic guitar recording not selected for the intro",
+      "origin_type": "purchased"
+    },
+    {
+      "path": "media/photo_x.png",
+      "description": "founder portrait photographed beside a window in soft daylight",
+      "origin_type": "original"
+    },
+    {
+      "path": "generated/music_sting.wav",
+      "description": "short electronic three-note logo sting generated for the show",
+      "origin_type": "ai_generated"
+    },
+    {
+      "path": "deliverables/podcast_ep1.wav",
+      "description": "first podcast episode with acoustic intro and electronic logo sting",
+      "origin_type": "output"
+    }
+  ]
+}

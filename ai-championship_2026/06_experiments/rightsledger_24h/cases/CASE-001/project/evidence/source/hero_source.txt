@@ -1,0 +1,1 @@
+Source for media/hero_skyline.png: https://example.test/skyline

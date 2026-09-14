@@ -1,0 +1,17 @@
+{
+  "schema_version": "2.0",
+  "case_id": "B01",
+  "project_type": "replace_with_distinct_project_type",
+  "subjects": [
+    {
+      "path": "replace/with/input_asset.ext",
+      "description": "neutral description without relationship or missing-evidence answers",
+      "origin_type": "third_party_free|purchased|open_source|ai_generated|original"
+    },
+    {
+      "path": "replace/with/output.ext",
+      "description": "neutral description of the project output",
+      "origin_type": "output"
+    }
+  ]
+}

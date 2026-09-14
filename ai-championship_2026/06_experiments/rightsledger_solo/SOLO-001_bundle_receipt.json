@@ -1,0 +1,21 @@
+{
+  "bundle_id": "SOLO-001",
+  "created_at": "2026-09-07",
+  "participant_exposure_status": "not_run",
+  "project_file_count": 19,
+  "tree_receipt_sha256": "b42da01e0dd8914e3745864d6a9e0f9947c8a766c286905911b410839b306d84",
+  "hash_method": "From repository root: find project -type f -exec shasum -a 256 each; LC_ALL=C sort; shasum -a 256 over the resulting lines.",
+  "c2pa_fixture": {
+    "project_path": "cases/SOLO-001/project/media/bg_09.jpg",
+    "source_path": "../rightsledger_c2pa/samples/raw/adobe-20220124-C.jpg",
+    "sha256": "75a8da33f6eaf1e16bf3b42cd78913b22b2e6a671fda217a508b1ba4230ce864",
+    "source_id": "SRC-075"
+  },
+  "validation": {
+    "relation_truth_match": true,
+    "missing_evidence_match": true,
+    "unrelated_clue_match": true,
+    "c2pa_state_match": true
+  },
+  "limitations": "Synthetic formative-use bundle validated by the implementation author; it is not an independent accuracy dataset. Do not open truth/SOLO-001.json before the P01 session."
+}

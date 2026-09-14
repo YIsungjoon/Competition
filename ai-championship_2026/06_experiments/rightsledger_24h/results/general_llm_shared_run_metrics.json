@@ -1,0 +1,15 @@
+{
+  "run_id": "EXP-RL-20260904-03",
+  "mode": "general_llm_checklist_shared_input",
+  "model": "qwen3:4b",
+  "case_count": 5,
+  "inference_duration_seconds": 826.077380874,
+  "responses_requiring_inline_thinking_strip": 5,
+  "human_review_time_seconds": null,
+  "accuracy_metrics": null,
+  "shared_input_fields": [
+    "path",
+    "description",
+    "origin_type"
+  ]
+}

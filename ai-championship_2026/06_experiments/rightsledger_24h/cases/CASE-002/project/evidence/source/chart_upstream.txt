@@ -1,0 +1,1 @@
+Upstream repository for the OpenPlot Mini bar-chart component

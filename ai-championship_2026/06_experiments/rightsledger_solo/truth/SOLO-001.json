@@ -1,0 +1,31 @@
+{
+  "case_id": "SOLO-001",
+  "do_not_open_before_session": true,
+  "expected_relations": [
+    {"relation_type":"evidence:source","from":"media/bg_09.jpg","to":"evidence/source/gradient_origin.txt"},
+    {"relation_type":"evidence:license","from":"media/bg_09.jpg","to":"evidence/license/gradient_permission.txt"},
+    {"relation_type":"evidence:receipt","from":"audio/bed_take2.wav","to":"evidence/receipt/ambient_order.txt"},
+    {"relation_type":"evidence:license","from":"audio/bed_take2.wav","to":"evidence/license/ambient_sync_terms.txt"},
+    {"relation_type":"evidence:source","from":"src/timeline.js","to":"evidence/source/motionpath_upstream.txt"},
+    {"relation_type":"evidence:license","from":"src/timeline.js","to":"evidence/license/motionpath_license.txt"},
+    {"relation_type":"evidence:prompt","from":"generated/title_ko.png","to":"evidence/prompt/title_prompt.txt"},
+    {"relation_type":"evidence:author","from":"media/logo.svg","to":"evidence/author/logo_authorship.txt"},
+    {"relation_type":"ingredient","from":"deliverables/launch_reel.mp4","to":"media/bg_09.jpg"},
+    {"relation_type":"ingredient","from":"deliverables/launch_reel.mp4","to":"audio/bed_take2.wav"},
+    {"relation_type":"ingredient","from":"deliverables/launch_reel.mp4","to":"src/timeline.js"},
+    {"relation_type":"ingredient","from":"deliverables/launch_reel.mp4","to":"generated/title_ko.png"},
+    {"relation_type":"ingredient","from":"deliverables/launch_reel.mp4","to":"media/logo.svg"}
+  ],
+  "expected_missing_evidence": [
+    {"asset":"generated/title_ko.png","evidence_type":"model_terms"}
+  ],
+  "expected_unrelated_evidence": ["evidence/source/unused_leaf_archive.txt"],
+  "expected_c2pa": {
+    "path": "media/bg_09.jpg",
+    "manifest_presence": "present",
+    "integrity_state": "valid",
+    "signer_trust_state": "untrusted",
+    "rights_permission_state": "not_evaluated"
+  },
+  "limitations": "Synthetic formative case; not an independent accuracy dataset. The C2PA file is an official public compatibility fixture and its test certificate is expected to be untrusted."
+}

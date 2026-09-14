@@ -1,0 +1,1 @@
+Synthetic product landing page.

@@ -1,0 +1,29 @@
+{
+  "subjects": [
+    {
+      "path": "src/c_01.js",
+      "description": "date formatting helper adapted from the ChronosLite package",
+      "origin_type": "open_source"
+    },
+    {
+      "path": "src/c_02.js",
+      "description": "custom event filter written entirely by the project team",
+      "origin_type": "original"
+    },
+    {
+      "path": "media/i_77.svg",
+      "description": "outline calendar icon from the OpenGlyph collection",
+      "origin_type": "third_party_free"
+    },
+    {
+      "path": "media/i_78.svg",
+      "description": "outline clock icon from the OpenGlyph collection",
+      "origin_type": "third_party_free"
+    },
+    {
+      "path": "deliverables/dashboard.zip",
+      "description": "dashboard bundle containing date helper, custom filter and two outline icons",
+      "origin_type": "output"
+    }
+  ]
+}

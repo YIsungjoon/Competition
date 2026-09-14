@@ -1,0 +1,79 @@
+{
+  "case_id": "CASE-004",
+  "title": "renamed open-source dashboard components",
+  "assets": [
+    "README.md",
+    "deliverables/dashboard.zip",
+    "evidence/author/filter_authorship.txt",
+    "evidence/license/calendar_icon_license.txt",
+    "evidence/license/chronos_license.txt",
+    "evidence/license/clock_icon_license.txt",
+    "evidence/source/calendar_icon_source.txt",
+    "evidence/source/chronos_upstream.txt",
+    "evidence/source/clock_icon_source.txt",
+    "lineage/dashboard_bundle.md",
+    "media/i_77.svg",
+    "media/i_78.svg",
+    "package.json",
+    "src/c_01.js",
+    "src/c_02.js"
+  ],
+  "relations": [
+    {
+      "relation_type": "evidence:author",
+      "from": "src/c_02.js",
+      "to": "evidence/author/filter_authorship.txt"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "media/i_77.svg",
+      "to": "evidence/license/calendar_icon_license.txt"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "media/i_78.svg",
+      "to": "evidence/license/clock_icon_license.txt"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "src/c_01.js",
+      "to": "evidence/license/chronos_license.txt"
+    },
+    {
+      "relation_type": "evidence:source",
+      "from": "media/i_77.svg",
+      "to": "evidence/source/calendar_icon_source.txt"
+    },
+    {
+      "relation_type": "evidence:source",
+      "from": "media/i_78.svg",
+      "to": "evidence/source/clock_icon_source.txt"
+    },
+    {
+      "relation_type": "evidence:source",
+      "from": "src/c_01.js",
+      "to": "evidence/source/chronos_upstream.txt"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/dashboard.zip",
+      "to": "media/i_77.svg"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/dashboard.zip",
+      "to": "media/i_78.svg"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/dashboard.zip",
+      "to": "src/c_01.js"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/dashboard.zip",
+      "to": "src/c_02.js"
+    }
+  ],
+  "missing_evidence": []
+}

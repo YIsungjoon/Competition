@@ -1,0 +1,9 @@
+{"record_type":"related_query_observation","source_id":"SRC-022","parent_term":"일기 앱","query":"예수 동행 일기 앱","growth_label":"+3650%","use_in_decision":false,"exclusion_reason":"특정 종교 일기 앱 효과로 전체 일기 수요를 대표하지 않음"}
+{"record_type":"related_query_observation","source_id":"SRC-024","parent_term":"사진 정리","query":"아이폰 사진 정리","interest_index":100,"use_in_decision":true,"selection_reason":"기기 안의 사진 뭉치 정리 행동"}
+{"record_type":"related_query_observation","source_id":"SRC-024","parent_term":"사진 정리","query":"중복 사진 정리","interest_index":73,"use_in_decision":true,"selection_reason":"사진 누적과 중복이라는 구체적 마찰"}
+{"record_type":"related_query_observation","source_id":"SRC-024","parent_term":"사진 정리","query":"사진 정리 프로그램","interest_index":57,"use_in_decision":true,"selection_reason":"문제 해결 도구를 찾는 행동 의도"}
+{"record_type":"related_query_observation","source_id":"SRC-024","parent_term":"사진 정리","query":"아이폰 중복 사진 정리","interest_index":23,"use_in_decision":true,"selection_reason":"모바일 사진 누적과 중복이라는 구체적 마찰"}
+{"record_type":"related_query_observation","source_id":"SRC-024","parent_term":"육아 일기","query":"투 바투 육아 일기","growth_label":"급등","use_in_decision":false,"exclusion_reason":"아이돌 콘텐츠로 육아 기록 수요와 무관"}
+{"record_type":"related_query_observation","source_id":"SRC-024","parent_term":"육아 일기","query":"txt 육아 일기","growth_label":"급등","use_in_decision":false,"exclusion_reason":"아이돌 콘텐츠로 육아 기록 수요와 무관"}
+{"record_type":"related_query_observation","source_id":"SRC-024","parent_term":"육아 일기","query":"txt 의 육아 일기","growth_label":"+300%","use_in_decision":false,"exclusion_reason":"아이돌 콘텐츠로 육아 기록 수요와 무관"}
+

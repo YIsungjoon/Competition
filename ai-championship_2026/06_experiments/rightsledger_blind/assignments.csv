@@ -1,0 +1,11 @@
+reviewer_id,run_order,case_id,condition
+R1,1,B01,A
+R1,2,B02,B
+R1,3,B03,A
+R1,4,B04,B
+R1,5,B05,A
+R2,1,B05,B
+R2,2,B04,A
+R2,3,B03,B
+R2,4,B02,A
+R2,5,B01,B

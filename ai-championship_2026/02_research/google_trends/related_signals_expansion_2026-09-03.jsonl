@@ -1,0 +1,38 @@
+{"record_type":"curated_related_query","source_id":"SRC-010","parent_term":"구독 취소","query":"Higgsfield 구독 취소","growth_label":"급등","selection_reason":"AI 서비스 구독 해지라는 구체적 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-010","parent_term":"구독 취소","query":"use ai 구독 취소","growth_label":"급등","selection_reason":"AI 서비스 구독 해지라는 구체적 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-010","parent_term":"보험금 청구","query":"실손24","growth_label":"+250%","selection_reason":"보험금 청구 절차의 디지털 서비스 탐색"}
+{"record_type":"curated_related_query","source_id":"SRC-010","parent_term":"보험금 청구","query":"실손 보험 청구","growth_label":"+80%","selection_reason":"구체적 청구 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-010","parent_term":"보험금 청구","query":"보험금 청구 방법","growth_label":"+50%","selection_reason":"절차 안내 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-011","parent_term":"펫보험","query":"펫퍼민트","growth_label":"+300%","selection_reason":"반려동물 보험 상품 탐색 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-011","parent_term":"유기동물","query":"반려동물 유기","growth_label":"+300%","selection_reason":"유기 문제 정보 탐색"}
+{"record_type":"curated_related_query","source_id":"SRC-011","parent_term":"유기동물","query":"유기동물 통계","growth_label":"+300%","selection_reason":"문제 규모 확인 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-011","parent_term":"유기동물","query":"유기동물 문제","growth_label":"+250%","selection_reason":"문제 원인과 해결 정보 탐색"}
+{"record_type":"curated_related_query","source_id":"SRC-011","parent_term":"유기동물","query":"유기동물 입양","growth_label":"+250%","selection_reason":"입양이라는 후속 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-012","parent_term":"육아","query":"단기 육아휴직","growth_label":"+650%","selection_reason":"돌봄과 업무 조정을 위한 제도 탐색"}
+{"record_type":"curated_related_query","source_id":"SRC-012","parent_term":"어린이집","query":"어린이집 보육료 지원","growth_label":"+300%","selection_reason":"지원 자격과 신청 탐색"}
+{"record_type":"curated_related_query","source_id":"SRC-012","parent_term":"어린이집","query":"어린이집 신청","growth_label":"+70%","selection_reason":"기관 선택 이후 신청 행동 의도"}
+{"record_type":"curated_related_query","source_id":"SRC-012","parent_term":"아이돌봄","query":"아이 돌봄 사","growth_label":"+450%","selection_reason":"실제 돌봄 제공자 탐색 의도","quality_flag":"display_tokenization_unclear"}
+{"record_type":"curated_related_query","source_id":"SRC-014","parent_term":"분리수거","query":"귤 껍질 분리수거","growth_label":"+120%","selection_reason":"특정 물품의 모호한 배출 규칙 확인"}
+{"record_type":"curated_related_query","source_id":"SRC-014","parent_term":"분리수거","query":"치킨 뼈 분리수거","growth_label":"+120%","selection_reason":"특정 물품의 모호한 배출 규칙 확인"}
+{"record_type":"curated_related_query","source_id":"SRC-014","parent_term":"전기요금","query":"전기요금 개편","growth_label":"+600%","selection_reason":"정책 변화가 개인 비용에 미치는 영향 확인"}
+{"record_type":"curated_related_query","source_id":"SRC-014","parent_term":"전기요금","query":"전기요금 자동 할인","growth_label":"+400%","selection_reason":"자격과 자동 적용 여부 확인"}
+{"record_type":"curated_related_query","source_id":"SRC-014","parent_term":"전기요금","query":"전기요금표","growth_label":"+250%","selection_reason":"요금 계산 근거 탐색"}
+{"record_type":"curated_related_query","source_id":"SRC-014","parent_term":"전기요금","query":"전기요금 누진제","growth_label":"+250%","selection_reason":"복잡한 요금 규칙 이해 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-014","parent_term":"미세먼지","query":"미세먼지 내일","growth_label":"+90%","selection_reason":"다음 날 행동 계획을 위한 예측 정보 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-015","parent_term":"여행자 보험","query":"카카오페이손해보험","growth_label":"+90%","selection_reason":"여행 위험 대비 상품 탐색"}
+{"record_type":"curated_related_query","source_id":"SRC-015","parent_term":"여행자 보험","query":"비짓재팬","growth_label":"+80%","selection_reason":"여행 준비 절차의 인접 행동 의도","quality_flag":"adjacent_not_direct"}
+{"record_type":"curated_related_query","source_id":"SRC-016","parent_term":"영상 편집","query":"Sora","growth_label":"+120%","selection_reason":"생성형 영상 도구 관심"}
+{"record_type":"curated_related_query","source_id":"SRC-016","parent_term":"영상 편집","query":"영상 AI","growth_label":"+70%","selection_reason":"AI 기반 제작 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-016","parent_term":"영상 편집","query":"AI 편집","growth_label":"+70%","selection_reason":"AI 기반 편집 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-016","parent_term":"숏폼","query":"숏폼 끄기","growth_label":"급등","selection_reason":"콘텐츠 생성이 아니라 노출 통제 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-016","parent_term":"숏폼","query":"카톡 숏폼 차단","growth_label":"급등","selection_reason":"주의력 보호를 위한 구체적 통제 행동"}
+{"record_type":"curated_related_query","source_id":"SRC-016","parent_term":"저작권","query":"생성형 AI 저작권 안내서","growth_label":"+950%","selection_reason":"AI 창작물의 권리와 사용 가능 범위 확인 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-016","parent_term":"유튜브 요약","query":"제미나이 유튜브 요약 안됨","growth_label":"+300%","selection_reason":"기존 요약 도구의 실패 지점 탐색"}
+{"record_type":"curated_related_query","source_id":"SRC-016","parent_term":"유튜브 요약","query":"강의 요약 AI","growth_label":"+200%","selection_reason":"학습 콘텐츠 구조화 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-016","parent_term":"유튜브 요약","query":"유튜브 분석","growth_label":"+90%","selection_reason":"요약을 넘어 구조와 의미 분석 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-017","parent_term":"유통기한","query":"유통기한 소비기한 차이","growth_label":"+140%","selection_reason":"표시 정보의 의미와 안전 판단 수요"}
+{"record_type":"curated_related_query","source_id":"SRC-017","parent_term":"유통기한","query":"계란 유통기한 확인","growth_label":"+60%","selection_reason":"특정 식품의 상태 확인 행동"}
+{"record_type":"curated_related_query","source_id":"SRC-018","parent_term":"재고 관리","query":"사방넷","growth_label":"+100%","selection_reason":"다채널 재고 관리 도구 탐색"}
+{"record_type":"curated_related_query","source_id":"SRC-018","parent_term":"재고 관리","query":"ERP","growth_label":"+80%","selection_reason":"구조화된 운영 시스템 탐색"}
+{"record_type":"curated_related_query","source_id":"SRC-018","parent_term":"고객 응대","query":"KT 고객응대 매니저 plus","growth_label":"+2350%","selection_reason":"AI 또는 자동화된 응대 도구 관심","quality_flag":"specific_product_effect"}
+{"record_type":"curated_related_query","source_id":"SRC-018","parent_term":"예약 관리","query":"네이버 예약","growth_label":"+130%","selection_reason":"예약 운영 도구 탐색"}

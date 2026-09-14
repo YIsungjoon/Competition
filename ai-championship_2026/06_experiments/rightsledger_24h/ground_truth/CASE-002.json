@@ -1,0 +1,84 @@
+{
+  "case_id": "CASE-002",
+  "title": "renamed multilingual campaign assets",
+  "assets": [
+    "README.md",
+    "audio/track_final.wav",
+    "deliverables/reel_v7.mp4",
+    "evidence/license/chart_mit.txt",
+    "evidence/license/percussion_terms.txt",
+    "evidence/license/street_photo_permission.txt",
+    "evidence/prompt/narration_prompt.txt",
+    "evidence/receipt/rhythm_order.txt",
+    "evidence/source/chart_upstream.txt",
+    "evidence/source/night_market_origin.txt",
+    "generated/voice_take.wav",
+    "lineage/reel_notes.md",
+    "media/img_1042.png",
+    "notes/edit_log.md",
+    "src/lib_a.js"
+  ],
+  "relations": [
+    {
+      "relation_type": "evidence:license",
+      "from": "audio/track_final.wav",
+      "to": "evidence/license/percussion_terms.txt"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "media/img_1042.png",
+      "to": "evidence/license/street_photo_permission.txt"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "src/lib_a.js",
+      "to": "evidence/license/chart_mit.txt"
+    },
+    {
+      "relation_type": "evidence:prompt",
+      "from": "generated/voice_take.wav",
+      "to": "evidence/prompt/narration_prompt.txt"
+    },
+    {
+      "relation_type": "evidence:receipt",
+      "from": "audio/track_final.wav",
+      "to": "evidence/receipt/rhythm_order.txt"
+    },
+    {
+      "relation_type": "evidence:source",
+      "from": "media/img_1042.png",
+      "to": "evidence/source/night_market_origin.txt"
+    },
+    {
+      "relation_type": "evidence:source",
+      "from": "src/lib_a.js",
+      "to": "evidence/source/chart_upstream.txt"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/reel_v7.mp4",
+      "to": "audio/track_final.wav"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/reel_v7.mp4",
+      "to": "generated/voice_take.wav"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/reel_v7.mp4",
+      "to": "media/img_1042.png"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/reel_v7.mp4",
+      "to": "src/lib_a.js"
+    }
+  ],
+  "missing_evidence": [
+    {
+      "asset": "generated/voice_take.wav",
+      "evidence_type": "model_terms"
+    }
+  ]
+}

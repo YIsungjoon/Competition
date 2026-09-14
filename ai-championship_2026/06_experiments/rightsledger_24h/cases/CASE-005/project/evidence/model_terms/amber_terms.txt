@@ -1,0 +1,1 @@
+Terms snapshot for the image model used for the amber bottle render

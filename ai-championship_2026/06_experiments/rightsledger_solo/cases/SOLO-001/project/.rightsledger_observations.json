@@ -1,0 +1,34 @@
+{
+  "subjects": [
+    {
+      "path": "media/bg_09.jpg",
+      "description": "soft abstract gradient shifting from green and orange to blue and pink, used as the keynote background",
+      "origin_type": "third_party_free"
+    },
+    {
+      "path": "audio/bed_take2.wav",
+      "description": "slow minimalist ambient synthesizer loop purchased for the event teaser",
+      "origin_type": "purchased"
+    },
+    {
+      "path": "src/timeline.js",
+      "description": "timeline transition helper adapted from the MotionPath Lite open-source project",
+      "origin_type": "open_source"
+    },
+    {
+      "path": "generated/title_ko.png",
+      "description": "AI-generated white Korean event-title lettering on a transparent background",
+      "origin_type": "ai_generated"
+    },
+    {
+      "path": "media/logo.svg",
+      "description": "geometric conference symbol drawn entirely by the project team",
+      "origin_type": "original"
+    },
+    {
+      "path": "deliverables/launch_reel.mp4",
+      "description": "conference launch reel combining the gradient, ambient loop, Korean title, logo and timeline transition",
+      "origin_type": "output"
+    }
+  ]
+}

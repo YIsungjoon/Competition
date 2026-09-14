@@ -1,0 +1,1 @@
+MIT license notice applying to the adapted MotionPath Lite transition utility.

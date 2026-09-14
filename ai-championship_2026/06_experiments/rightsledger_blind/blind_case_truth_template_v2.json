@@ -1,0 +1,32 @@
+{
+  "schema_version": "2.0",
+  "case_id": "B01",
+  "created_by": "independent_author_pseudonym",
+  "challenge_tags": [
+    "renamed_asset",
+    "missing_evidence"
+  ],
+  "relations": [
+    {
+      "relation_type": "ingredient|evidence:source|evidence:license|evidence:receipt|evidence:prompt|evidence:model_terms|evidence:author",
+      "from": "output/or/input_asset/path",
+      "to": "input_asset/or/evidence/path"
+    }
+  ],
+  "missing_evidence": [
+    {
+      "asset": "replace/with/input_asset.ext",
+      "evidence_type": "source|license|receipt|prompt|model_terms|author"
+    }
+  ],
+  "c2pa_expected": [
+    {
+      "asset": "replace/with/c2pa_asset.ext",
+      "manifest_presence": "present|absent",
+      "integrity_state": "valid|invalid|not_applicable",
+      "signer_trust_state": "untrusted|not_reported_untrusted|not_applicable",
+      "validation_report": "truth/c2pa/replace_with_raw_report.json"
+    }
+  ],
+  "sealed_until": "all_ten_review_submissions_hashed"
+}

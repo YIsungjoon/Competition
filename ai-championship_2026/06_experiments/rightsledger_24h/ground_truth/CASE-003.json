@@ -1,0 +1,68 @@
+{
+  "case_id": "CASE-003",
+  "title": "similar audio alternatives and missing purchase evidence",
+  "assets": [
+    "README.md",
+    "deliverables/podcast_ep1.wav",
+    "evidence/author/portrait_author.txt",
+    "evidence/license/guitar_standard_license.txt",
+    "evidence/model_terms/sting_model_terms.txt",
+    "evidence/prompt/sting_prompt.txt",
+    "evidence/receipt/guitar_standard_order.txt",
+    "exports/cover_preview.txt",
+    "generated/music_sting.wav",
+    "lineage/episode_cue.md",
+    "media/a_17.wav",
+    "media/a_18.wav",
+    "media/photo_x.png",
+    "notes/guest_topics.md",
+    "notes/mix_settings.txt"
+  ],
+  "relations": [
+    {
+      "relation_type": "evidence:author",
+      "from": "media/photo_x.png",
+      "to": "evidence/author/portrait_author.txt"
+    },
+    {
+      "relation_type": "evidence:license",
+      "from": "media/a_17.wav",
+      "to": "evidence/license/guitar_standard_license.txt"
+    },
+    {
+      "relation_type": "evidence:model_terms",
+      "from": "generated/music_sting.wav",
+      "to": "evidence/model_terms/sting_model_terms.txt"
+    },
+    {
+      "relation_type": "evidence:prompt",
+      "from": "generated/music_sting.wav",
+      "to": "evidence/prompt/sting_prompt.txt"
+    },
+    {
+      "relation_type": "evidence:receipt",
+      "from": "media/a_17.wav",
+      "to": "evidence/receipt/guitar_standard_order.txt"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/podcast_ep1.wav",
+      "to": "generated/music_sting.wav"
+    },
+    {
+      "relation_type": "ingredient",
+      "from": "deliverables/podcast_ep1.wav",
+      "to": "media/a_17.wav"
+    }
+  ],
+  "missing_evidence": [
+    {
+      "asset": "media/a_18.wav",
+      "evidence_type": "license"
+    },
+    {
+      "asset": "media/a_18.wav",
+      "evidence_type": "receipt"
+    }
+  ]
+}

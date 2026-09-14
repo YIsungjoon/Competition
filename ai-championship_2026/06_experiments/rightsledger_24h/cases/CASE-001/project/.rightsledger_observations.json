@@ -1,0 +1,29 @@
+{
+  "subjects": [
+    {
+      "path": "media/hero_skyline.png",
+      "description": "wide blue night city skyline used as a hero background",
+      "origin_type": "third_party_free"
+    },
+    {
+      "path": "audio/calm_piano.wav",
+      "description": "calm piano instrumental bed for the launch video",
+      "origin_type": "purchased"
+    },
+    {
+      "path": "src/player.js",
+      "description": "JavaScript audio player adapted from the WaveKit project",
+      "origin_type": "open_source"
+    },
+    {
+      "path": "generated/tagline.png",
+      "description": "AI-generated Korean campaign tagline on a transparent background",
+      "origin_type": "ai_generated"
+    },
+    {
+      "path": "deliverables/launch_video.mp4",
+      "description": "launch video combining the skyline, piano bed and tagline",
+      "origin_type": "output"
+    }
+  ]
+}

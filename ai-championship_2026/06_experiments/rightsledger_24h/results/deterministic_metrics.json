@@ -1,0 +1,174 @@
+{
+  "mode": "deterministic",
+  "model": null,
+  "case_count": 5,
+  "asset_discovery": {
+    "tp": 75,
+    "predicted": 75,
+    "expected": 75,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "relations": {
+    "tp": 11,
+    "predicted": 11,
+    "expected": 50,
+    "precision": 1.0,
+    "recall": 0.22,
+    "f1": 0.36065573770491804
+  },
+  "missing_evidence": {
+    "tp": 4,
+    "predicted": 29,
+    "expected": 4,
+    "precision": 0.13793103448275862,
+    "recall": 1.0,
+    "f1": 0.2424242424242424
+  },
+  "legal_conclusion_count": 0,
+  "unresolved_clues": 40,
+  "review_proxy_units": 69,
+  "per_case": [
+    {
+      "case_id": "CASE-001",
+      "asset_discovery": {
+        "tp": 15,
+        "predicted": 15,
+        "expected": 15,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "relations": {
+        "tp": 11,
+        "predicted": 11,
+        "expected": 11,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "missing_evidence": {
+        "tp": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "unresolved_clues": 0
+    },
+    {
+      "case_id": "CASE-002",
+      "asset_discovery": {
+        "tp": 15,
+        "predicted": 15,
+        "expected": 15,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "relations": {
+        "tp": 0,
+        "predicted": 0,
+        "expected": 11,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "missing_evidence": {
+        "tp": 1,
+        "predicted": 8,
+        "expected": 1,
+        "precision": 0.125,
+        "recall": 1.0,
+        "f1": 0.2222222222222222
+      },
+      "unresolved_clues": 11
+    },
+    {
+      "case_id": "CASE-003",
+      "asset_discovery": {
+        "tp": 15,
+        "predicted": 15,
+        "expected": 15,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "relations": {
+        "tp": 0,
+        "predicted": 0,
+        "expected": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "missing_evidence": {
+        "tp": 2,
+        "predicted": 7,
+        "expected": 2,
+        "precision": 0.2857142857142857,
+        "recall": 1.0,
+        "f1": 0.4444444444444445
+      },
+      "unresolved_clues": 7
+    },
+    {
+      "case_id": "CASE-004",
+      "asset_discovery": {
+        "tp": 15,
+        "predicted": 15,
+        "expected": 15,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "relations": {
+        "tp": 0,
+        "predicted": 0,
+        "expected": 11,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "missing_evidence": {
+        "tp": 0,
+        "predicted": 7,
+        "expected": 0,
+        "precision": 0.0,
+        "recall": 1.0,
+        "f1": 0.0
+      },
+      "unresolved_clues": 11
+    },
+    {
+      "case_id": "CASE-005",
+      "asset_discovery": {
+        "tp": 15,
+        "predicted": 15,
+        "expected": 15,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "relations": {
+        "tp": 0,
+        "predicted": 0,
+        "expected": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "missing_evidence": {
+        "tp": 1,
+        "predicted": 7,
+        "expected": 1,
+        "precision": 0.14285714285714285,
+        "recall": 1.0,
+        "f1": 0.25
+      },
+      "unresolved_clues": 11
+    }
+  ]
+}

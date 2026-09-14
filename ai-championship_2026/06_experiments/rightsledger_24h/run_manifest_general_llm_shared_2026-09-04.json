@@ -1,0 +1,51 @@
+{
+  "run_id": "EXP-RL-20260904-03",
+  "created_at": "2026-09-04T16:05:50+09:00",
+  "runtime": {
+    "name": "Ollama",
+    "version": "0.24.0",
+    "external_data_transmission": false
+  },
+  "model": {
+    "name": "qwen3:4b",
+    "local_model_id": "359d7dd4bcda"
+  },
+  "runner_sha256": "cf69e77d31fff24f6c812b4cd4210daa824f8c97476969ada45707b97de0bf70",
+  "core_sha256": "82454da8fd58fc848873ef4bd97aad6b230670c9342a0a4b5eee906c0f85532b",
+  "prompt_body_sha256": "b922befad4ca1cefe4b72c2f062c6168db5ed010659bfaecb042434fa774040b",
+  "files_sha256": {
+    "results/general_llm_shared_inputs/CASE-001.md": "ebe11549062763ad3c6d200f14e4599251ba41936c9c03a3a2e795661e049443",
+    "results/general_llm_shared_inputs/CASE-002.md": "751017d67fea14ba8a4c9679c4dcb970ee4188cd0ca638659c99da37a6b4514e",
+    "results/general_llm_shared_inputs/CASE-003.md": "afb6fd0545624a7a8e14f074a920d39645143ceaaf2e9fa9b56e26f313d53873",
+    "results/general_llm_shared_inputs/CASE-004.md": "a59950bf69a3d06d13d7b4aac5792490a999a009d9c91fe3cebe3beef6baa085",
+    "results/general_llm_shared_inputs/CASE-005.md": "3b77005ede503d16d12e9646da8b9acdc1599311047c84affd1fb026825c3f0d",
+    "results/general_llm_shared_outputs/CASE-001.md": "e9b12bd7253b049ff69aa2a3d33407efd767e960fcd2a22c83fcb2c53d3a9a29",
+    "results/general_llm_shared_outputs/CASE-002.md": "1a3d922a6c9010f9ad4ccf4a28d9379854f3b7ff6edfbfa6cf838b748bf5c1fb",
+    "results/general_llm_shared_outputs/CASE-003.md": "a4c187ad5de9862abb9449449c4cde6647488c9cae4626ee6e047b96f5708a89",
+    "results/general_llm_shared_outputs/CASE-004.md": "d44e6fd715ca54416b91b8f1fac31dbbd27b7d95d00380e10d2f89a07f42841c",
+    "results/general_llm_shared_outputs/CASE-005.md": "c754ce9a64e79d3a121e431f26888f06077be1d6b02b9fd8f3c2dccc92323dc6",
+    "results/general_llm_shared_raw_cases/CASE-001.json": "d6cd208c7a3bc3ee9385f481721074131a2f449cce810e0106ae7e8701b5211f",
+    "results/general_llm_shared_raw_cases/CASE-002.json": "89878bdee2f9528f884942e5e545e340b2585819c83bd9708ee2f2ef5e4ff0d8",
+    "results/general_llm_shared_raw_cases/CASE-003.json": "01ec58fe24a158e38f9f8c4da87bbe012319f0f82a6e4ec8d62c5a470cf907c4",
+    "results/general_llm_shared_raw_cases/CASE-004.json": "85f245337b6c8686b66229d167065336d46716668f1e07fe81c540d86138a75c",
+    "results/general_llm_shared_raw_cases/CASE-005.json": "670f7a5b01c8db0d97b73106c38bc02bbbc04c4d466b4d4a13981a508b799f08",
+    "results/general_llm_shared_raw.jsonl": "85eea8d95517d92afba1d71f43fb27ed8b54332504ed82634054be39944573ec",
+    "results/general_llm_shared_run_metrics.json": "522cf7eb04ebbca486e08e9d4f230b38743280522118b1c9088b1054a5e267c1"
+  },
+  "result": {
+    "run_id": "EXP-RL-20260904-03",
+    "mode": "general_llm_checklist_shared_input",
+    "model": "qwen3:4b",
+    "case_count": 5,
+    "inference_duration_seconds": 826.077380874,
+    "responses_requiring_inline_thinking_strip": 5,
+    "human_review_time_seconds": null,
+    "accuracy_metrics": null,
+    "shared_input_fields": [
+      "path",
+      "description",
+      "origin_type"
+    ]
+  },
+  "comparison_boundary": "Same synthetic cases and same asset declarations; still not independent or blinded."
+}

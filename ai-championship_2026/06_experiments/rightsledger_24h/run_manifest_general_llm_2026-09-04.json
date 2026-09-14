@@ -1,0 +1,56 @@
+{
+  "experiment_id": "EXP-RL-20260904-02",
+  "recorded_at": "2026-09-04T15:06:43+09:00",
+  "timezone": "Asia/Seoul",
+  "scope": "general_llm_checklist_baseline_on_existing_synthetic_cases",
+  "candidate": "IDEA-033 RightsLedger",
+  "code": {
+    "path": "experiment.py",
+    "sha256_at_execution": null,
+    "sha256_after_reporting_update": "82454da8fd58fc848873ef4bd97aad6b230670c9342a0a4b5eee906c0f85532b",
+    "integrity_note": "The exact whole-file hash was not captured before execution. The baseline runner was not changed after execution; later edits only extended comparison reporting. Prompt, per-case input, and output hashes were captured by the run itself.",
+    "python": "3.14.5",
+    "external_dependencies": []
+  },
+  "prompt": {
+    "path": "general_llm_baseline_prompt_v1.md",
+    "body_sha256": "b922befad4ca1cefe4b72c2f062c6168db5ed010659bfaecb042434fa774040b"
+  },
+  "runtime": {
+    "name": "Ollama",
+    "version": "0.24.0",
+    "external_data_transmission": false
+  },
+  "model": {
+    "name": "qwen3:4b",
+    "local_model_id": "359d7dd4bcda",
+    "parameters": "4.0B",
+    "quantization": "Q4_K_M",
+    "license": "Apache-2.0",
+    "temperature": 0,
+    "seed": 20260904,
+    "num_ctx": 32768,
+    "thinking_requested": false
+  },
+  "runs": [
+    {"case_id":"CASE-001","input_sha256":"dfd66f092d2e4dfb0a67c09a5e9d229c2098aa2cda0dc48bc5dc9506970b4fd6","output_sha256":"70ee64d39cc9bf33acce4487264b3136c04f2f6ed70d494462de9a8a25de9a07","duration_seconds":227.198154917},
+    {"case_id":"CASE-002","input_sha256":"6c14bc9c88413ac6943386fc6507173bc12fdac0b33b5e689293584bff4b896b","output_sha256":"866961f74c7f3c2808d4b8f5e2b71898fb6dd85d1cd105b91ab54fb2c416fc8a","duration_seconds":196.897039708},
+    {"case_id":"CASE-003","input_sha256":"64a5eab615b46df5664e7b66023b1722e03115e1be95b9f921628377d3c2c66c","output_sha256":"f9ada47639d643dd3be63fd30b7d0fe1622fafe7821fad7a6480e5a9b0ddda72","duration_seconds":195.425765833},
+    {"case_id":"CASE-004","input_sha256":"25ebabbc7666063baf98b878c42acf04680c0b7975142dde35a0cf2293b436e1","output_sha256":"761867f493785b7f0adbc43b047d79db849a41a0f3f86ba728702a26f4246239","duration_seconds":186.075831458},
+    {"case_id":"CASE-005","input_sha256":"ecb7cf4d90672abfaba0d5e47bf6beae991d84f8d3fc02ca647d1e1b8dab71b9","output_sha256":"10f83b72a5f50f0253c90349bb3bfc7e013af5a6f964baf0ddae7672042e744b","duration_seconds":131.027586292}
+  ],
+  "result": {
+    "case_count": 5,
+    "total_inference_seconds": 936.624378208,
+    "inline_thinking_stripped_count": 5,
+    "human_review_time_seconds": null,
+    "formal_accuracy_metrics": null,
+    "preliminary_non_blind_explicit_missing_recall": 0.25,
+    "candidate_status": "retain_for_blind_validation_not_selected"
+  },
+  "limitations": [
+    "The preliminary coding was performed after outputs were generated and was not blinded.",
+    "The 4B local model does not represent all commercial general-purpose LLMs.",
+    "The five projects were synthetic and authored by the experiment designer."
+  ]
+}

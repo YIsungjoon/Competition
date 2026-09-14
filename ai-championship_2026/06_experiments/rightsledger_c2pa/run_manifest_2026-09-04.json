@@ -1,0 +1,24 @@
+{
+  "experiment_id": "EXP-RL-C2PA-20260904-01",
+  "created_at": "2026-09-04T15:20:38+09:00",
+  "tool": {
+    "path": "/opt/homebrew/bin/c2patool",
+    "version": "c2patool 0.27.17"
+  },
+  "script_sha256": "1e0abd79cb35b847c224df4a8a5b4acf6fcbe456c9e6ee7bcd1993decc377168",
+  "input_sha256": {
+    "samples/raw/LICENSE": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2",
+    "samples/raw/adobe-20220124-A.jpg": "f999fd78bfe8a83c96e468a078830ba94485bc1bc6fd086fb94a43bd29dd0f23",
+    "samples/raw/adobe-20220124-C.jpg": "75a8da33f6eaf1e16bf3b42cd78913b22b2e6a671fda217a508b1ba4230ce864",
+    "samples/raw/adobe-20220124-E-sig-CA.jpg": "0d4c2774f1b7e94b9613bb952b0a76b6a178d22ac6d206d257d2af1376cbbff2",
+    "samples/raw/upstream_README.md": "68d283e92f8b943d782ae589011e767f3dec5aebae83f95f6f8c77672b7dc6b8"
+  },
+  "output_sha256": {
+    "results/raw_c2pa_absent.json": "5cee1614faa8a2da456d6428d28fa1010dae9b87b71cfd353ae501c3017809d1",
+    "results/raw_c2pa_invalid_signature.json": "ebc6fc21536c7826179ce025e65c1a5d3f08c86955c3567855ad1a51aef56293",
+    "results/raw_c2pa_valid.json": "22f21ba192ee57b42f16f61c1f8b1de380bb5a7e945daf0787704e4191f9706a",
+    "results/summary_2026-09-04.json": "bd6ce1f853b386fb29ffb7ff24f8930738f473dccafed71bd4d92f955ce4cf59",
+    "results/c2pa_spike_report_2026-09-04.md": "be7a6c52193f067faafa880dac92ce3c7578c1a835ac01f9fa0bceb6cf715209"
+  },
+  "all_expected_matched": true
+}

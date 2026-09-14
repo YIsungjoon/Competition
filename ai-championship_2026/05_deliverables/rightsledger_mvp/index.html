@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RightsLedger — AI 증거 관계 감사</title>
+  <style>
+    :root {
+      --ink: #17221b;
+      --muted: #5b695f;
+      --paper: #f5f2e8;
+      --card: #fffdf7;
+      --line: #d8ddcf;
+      --green: #174f36;
+      --lime: #cce861;
+      --coral: #ff795f;
+      --amber: #f3c454;
+      --shadow: 0 18px 60px rgba(23, 34, 27, .10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(204, 232, 97, .34), transparent 28rem),
+        radial-gradient(circle at 95% 16%, rgba(255, 121, 95, .18), transparent 25rem),
+        var(--paper);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      line-height: 1.55;
+    }
+    button, select, input { font: inherit; }
+    button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible {
+      outline: 3px solid rgba(255, 121, 95, .5);
+      outline-offset: 3px;
+    }
+    header, main, footer { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0 10px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: -.03em; }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      color: white;
+      background: var(--green);
+      box-shadow: 4px 4px 0 var(--lime);
+    }
+    .health { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; }
+    .dot { width: 9px; height: 9px; border-radius: 99px; background: #a3aaa5; }
+    .dot.ready { background: #2aa769; box-shadow: 0 0 0 5px rgba(42, 167, 105, .12); }
+    .dot.warn { background: var(--coral); box-shadow: 0 0 0 5px rgba(255, 121, 95, .12); }
+    .hero { padding: 72px 0 48px; max-width: 870px; }
+    .eyebrow { font-size: 13px; font-weight: 850; letter-spacing: .12em; color: var(--green); text-transform: uppercase; }
+    h1 { margin: 12px 0 18px; font-size: clamp(42px, 8vw, 82px); line-height: .98; letter-spacing: -.065em; }
+    .hero p { max-width: 700px; margin: 0; color: var(--muted); font-size: clamp(17px, 2vw, 21px); }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .badge { padding: 7px 11px; border: 1px solid var(--line); border-radius: 99px; background: rgba(255, 253, 247, .66); font-size: 13px; font-weight: 700; }
+    .panel {
+      margin-bottom: 26px;
+      padding: clamp(20px, 4vw, 36px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 253, 247, .94);
+      box-shadow: var(--shadow);
+    }
+    .step { display: flex; gap: 18px; align-items: flex-start; }
+    .step-number {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--ink);
+      color: white;
+      font-weight: 900;
+    }
+    h2 { margin: 0 0 6px; font-size: clamp(22px, 3vw, 31px); letter-spacing: -.035em; }
+    h3 { margin: 0 0 12px; font-size: 18px; letter-spacing: -.02em; }
+    .muted { color: var(--muted); }
+    .dropzone {
+      display: block;
+      position: relative;
+      margin: 24px 0 16px;
+      padding: 34px 22px;
+      border: 2px dashed #9faa9f;
+      border-radius: 18px;
+      text-align: center;
+      background: #fbfaf4;
+      transition: .18s ease;
+    }
+    .dropzone:hover { border-color: var(--green); transform: translateY(-1px); }
+    .dropzone input { position: absolute; inset: 0; width: 100%; opacity: 0; cursor: pointer; }
+    .dropzone strong { display: block; font-size: 18px; }
+    .dropzone span { color: var(--muted); font-size: 14px; }
+    .action-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .primary, .secondary {
+      border: 0;
+      border-radius: 14px;
+      padding: 13px 18px;
+      cursor: pointer;
+      font-weight: 850;
+      transition: .18s ease;
+    }
+    .primary { color: white; background: var(--green); box-shadow: 0 8px 24px rgba(23, 79, 54, .2); }
+    .primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(23, 79, 54, .27); }
+    .secondary { color: var(--ink); background: var(--lime); }
+    button:disabled { opacity: .42; cursor: not-allowed; box-shadow: none; }
+    details { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    summary { cursor: pointer; color: var(--green); font-weight: 800; }
+    code { padding: 2px 5px; border-radius: 6px; background: #edf0e6; font-size: .9em; overflow-wrap: anywhere; }
+    .alert { display: none; margin: 16px 0 0; padding: 12px 14px; border-radius: 12px; background: #fff0ec; color: #8b2d1b; font-weight: 700; }
+    .alert.show { display: block; }
+    .result-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; flex-wrap: wrap; }
+    .analysis-id { color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
+    .stat { padding: 17px; border: 1px solid var(--line); border-radius: 16px; background: #fbfaf4; }
+    .stat b { display: block; font-size: 27px; line-height: 1; letter-spacing: -.04em; }
+    .stat span { display: block; margin-top: 7px; color: var(--muted); font-size: 12px; }
+    .ai-strip {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      margin: 22px 0;
+      padding: 16px 18px;
+      border-radius: 16px;
+      color: white;
+      background: var(--green);
+    }
+    .ai-strip b { color: var(--lime); }
+    .boundary { padding: 14px 16px; border-left: 4px solid var(--coral); background: #fff4ed; font-size: 14px; }
+    .section-block { margin-top: 34px; }
+    .section-title { display: flex; justify-content: space-between; align-items: end; gap: 12px; margin-bottom: 10px; }
+    .section-title p { margin: 0; color: var(--muted); font-size: 13px; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 15px; }
+    table { width: 100%; border-collapse: collapse; min-width: 720px; background: white; }
+    th, td { padding: 13px 14px; border-bottom: 1px solid #e8eadf; text-align: left; vertical-align: top; font-size: 13px; }
+    th { color: var(--muted); background: #f7f7f1; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; }
+    tr:last-child td { border-bottom: 0; }
+    select { max-width: 280px; padding: 8px 9px; border: 1px solid #bdc6bb; border-radius: 9px; color: var(--ink); background: white; }
+    .method { display: inline-block; padding: 3px 7px; border-radius: 7px; font-size: 11px; font-weight: 850; }
+    .method.ai { color: #123b29; background: var(--lime); }
+    .method.exact { background: #e8ece8; }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .issue { padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: #fbfaf4; }
+    .issue strong { display: block; margin-bottom: 4px; }
+    .issue small { color: var(--muted); }
+    .empty { padding: 22px; border: 1px dashed var(--line); border-radius: 14px; color: var(--muted); text-align: center; }
+    .export-box { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-top: 34px; padding: 20px; border-radius: 18px; background: var(--ink); color: white; }
+    .export-box p { margin: 4px 0 0; color: #c8d0ca; font-size: 13px; }
+    .spinner { display: none; width: 17px; height: 17px; border: 2px solid rgba(255,255,255,.35); border-top-color: white; border-radius: 50%; animation: spin .8s linear infinite; vertical-align: -3px; margin-right: 7px; }
+    .busy .spinner { display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    footer { padding: 34px 0 50px; color: var(--muted); font-size: 12px; }
+    [hidden] { display: none !important; }
+    @media (max-width: 760px) {
+      .hero { padding-top: 46px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .cards { grid-template-columns: 1fr; }
+      .ai-strip, .export-box { align-items: flex-start; flex-direction: column; }
+      .step { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="brand-mark" aria-hidden="true">R</span> RightsLedger</div>
+    <div class="health" aria-live="polite"><span id="healthDot" class="dot"></span><span id="healthText">실행 환경 확인 중</span></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">AI evidence map</div>
+      <h1>파일은 있는데,<br>증거가 연결되지 않았다.</h1>
+      <p>프로젝트 폴더의 자산·출처·라이선스·생성 기록을 AI가 관계 후보로 연결합니다. 최종 판단은 사람이 확인하고, 확인된 사실만 감사 기록으로 남깁니다.</p>
+      <div class="badges">
+        <span class="badge">로컬 AI 분석</span>
+        <span class="badge">업로드 저장 없음</span>
+        <span class="badge">SHA-256 인벤토리</span>
+        <span class="badge">법률 결론 생성 안 함</span>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="loadTitle">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div>
+          <h2 id="loadTitle">프로젝트 폴더 불러오기</h2>
+          <div class="muted">최상위에 자산 설명 파일이 있는 폴더를 선택하세요.</div>
+        </div>
+      </div>
+      <label class="dropzone" for="folderInput">
+        <input id="folderInput" type="file" webkitdirectory multiple aria-describedby="fileStatus">
+        <strong>폴더를 클릭해 선택</strong>
+        <span>최대 200개 · 파일당 5MB · 전체 25MB</span>
+      </label>
+      <div class="action-row">
+        <div id="fileStatus" class="muted" aria-live="polite">아직 선택한 폴더가 없습니다.</div>
+        <button id="analyzeButton" class="primary" disabled><span class="spinner"></span><span class="button-label">AI 관계 분석</span></button>
+      </div>
+      <div id="errorBox" class="alert" role="alert"></div>
+      <details>
+        <summary>MVP 입력 규칙 보기</summary>
+        <p>폴더 최상위의 <code>.rightsledger_observations.json</code>에 감사할 자산의 <code>path</code>, 중립적인 <code>description</code>, <code>origin_type</code>을 선언합니다. 증거는 <code>evidence/source</code>, <code>evidence/license</code>, <code>evidence/receipt</code>, <code>evidence/prompt</code>, <code>evidence/model_terms</code>, <code>evidence/author</code> 아래에 둡니다. 결과물 구성은 <code>lineage/*.md</code>에서 <code>Output:</code>과 <code>Ingredient:</code>로 기록합니다.</p>
+      </details>
+    </section>
+
+    <section id="resultPanel" class="panel" hidden aria-labelledby="resultTitle">
+      <div class="result-head">
+        <div>
+          <div class="eyebrow">Review workspace</div>
+          <h2 id="resultTitle">AI 제안을 사람이 확정합니다</h2>
+        </div>
+        <div id="analysisId" class="analysis-id"></div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b id="assetCount">0</b><span>선언 자산</span></div>
+        <div class="stat"><b id="relationCount">0</b><span>관계 제안</span></div>
+        <div class="stat"><b id="missingCount">0</b><span>잠정 누락</span></div>
+        <div class="stat"><b id="pendingCount">0</b><span>검토 대기</span></div>
+      </div>
+
+      <div class="ai-strip">
+        <div><b id="aiModel">AI</b><br><span id="aiSummary">분석 정보</span></div>
+        <div id="aiThresholds"></div>
+      </div>
+      <div id="boundary" class="boundary"></div>
+
+      <div class="section-block">
+        <div class="section-title"><div><h3>관계 제안</h3><p>AI 의미 연결은 검토 대기로 시작합니다. 자산을 바꾸거나 제외할 수 있습니다.</p></div></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>방식</th><th>관계</th><th>자산</th><th>근거/결과물</th><th>결정</th></tr></thead>
+            <tbody id="relationRows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="unresolvedBlock" class="section-block">
+        <div class="section-title"><div><h3>자동 연결 보류</h3><p>기준을 넘지 못한 단서입니다. 확실할 때만 후보를 선택하세요.</p></div></div>
+        <div id="unresolvedContent"></div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-title"><div><h3>필수 증거 누락</h3><p id="missingNote">현재 결정에 따라 다시 계산됩니다.</p></div></div>
+        <div id="missingCards" class="cards"></div>
+      </div>
+
+      <div id="c2paBlock" class="section-block">
+        <div class="section-title"><div><h3>C2PA 기술 상태</h3><p>매니페스트·무결성·서명자 신뢰를 권리 허락과 분리합니다.</p></div></div>
+        <div id="c2paContent"></div>
+      </div>
+
+      <div class="export-box">
+        <div><strong>검토 결과 내보내기</strong><p id="exportHint">AI 의미 연결을 모두 확인하면 JSON 기록을 받을 수 있습니다.</p></div>
+        <button id="exportButton" class="secondary" disabled>감사 기록 JSON</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>RightsLedger MVP 0.1 · 관계 후보와 기술 상태를 기록하며 권리·법률 판단을 대신하지 않습니다.</footer>
+
+  <script>
+    const $ = (selector) => document.querySelector(selector);
+    const esc = (value) => String(value ?? "")
+      .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+    const originLabels = {
+      third_party_free: "무료 제3자 자산", purchased: "구매 자산", open_source: "오픈소스",
+      ai_generated: "AI 생성", original: "직접 제작", output: "결과물"
+    };
+    const evidenceLabels = {
+      source: "원출처", license: "라이선스", receipt: "구매 증빙",
+      prompt: "생성 프롬프트", model_terms: "모델 약관", author: "저자 확인"
+    };
+    const state = { files: [], analysis: null, relations: [], unresolved: [] };
+
+    function formatBytes(bytes) {
+      if (bytes < 1024) return `${bytes}B`;
+      if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)}KB`;
+      return `${(bytes / 1024 / 1024).toFixed(1)}MB`;
+    }
+
+    async function refreshHealth() {
+      try {
+        const response = await fetch("/api/health");
+        const data = await response.json();
+        const ready = data.ollama.reachable && data.ollama.model_available;
+        $("#healthDot").className = `dot ${ready ? "ready" : "warn"}`;
+        $("#healthText").textContent = ready
+          ? `${data.ollama.model} 준비됨 · C2PA ${data.c2pa.available ? "준비됨" : "없음"}`
+          : `Ollama 또는 ${data.ollama.model} 확인 필요`;
+      } catch {
+        $("#healthDot").className = "dot warn";
+        $("#healthText").textContent = "실행 환경을 확인하지 못함";
+      }
+    }
+
+    function showError(message = "") {
+      const box = $("#errorBox");
+      box.textContent = message;
+      box.classList.toggle("show", Boolean(message));
+    }
+
+    $("#folderInput").addEventListener("change", (event) => {
+      showError();
+      state.files = [...event.target.files].filter(file => !file.webkitRelativePath.includes("/__MACOSX/") && file.name !== ".DS_Store");
+      const total = state.files.reduce((sum, file) => sum + file.size, 0);
+      const hasManifest = state.files.some(file => file.name === ".rightsledger_observations.json");
+      const valid = state.files.length > 0 && state.files.length <= 200 && total <= 25 * 1024 * 1024
+        && state.files.every(file => file.size <= 5 * 1024 * 1024) && hasManifest;
+      $("#fileStatus").textContent = state.files.length
+        ? `${state.files.length}개 파일 · ${formatBytes(total)}${hasManifest ? " · 자산 선언 확인" : " · 자산 선언 없음"}`
+        : "아직 선택한 폴더가 없습니다.";
+      $("#analyzeButton").disabled = !valid;
+      if (state.files.length && !valid) {
+        showError(hasManifest ? "파일 수 또는 크기 제한을 확인해 주세요." : "폴더 최상위에 .rightsledger_observations.json이 필요합니다.");
+      }
+    });
+
+    function toBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(",", 2)[1]);
+        reader.onerror = () => reject(new Error(`${file.name}을 읽지 못했습니다.`));
+        reader.readAsDataURL(file);
+      });
+    }
+
+    $("#analyzeButton").addEventListener("click", async () => {
+      const button = $("#analyzeButton");
+      button.disabled = true;
+      button.classList.add("busy");
+      $(".button-label").textContent = "분석 중";
+      showError();
+      try {
+        const files = await Promise.all(state.files.map(async file => ({
+          path: file.webkitRelativePath || file.name,
+          content_base64: await toBase64(file)
+        })));
+        const response = await fetch("/api/analyze", {
+          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ files })
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || "분석에 실패했습니다.");
+        initializeReview(data);
+        $("#resultPanel").hidden = false;
+        $("#resultPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+      } catch (error) {
+        showError(error.message || "분석에 실패했습니다.");
+      } finally {
+        button.disabled = false;
+        button.classList.remove("busy");
+        $(".button-label").textContent = "AI 관계 분석";
+      }
+    });
+
+    function relationAsset(relation) {
+      return relation.relation_type.startsWith("evidence:") ? relation.from : relation.to;
+    }
+
+    function initializeReview(data) {
+      state.analysis = data;
+      state.relations = data.relations.map(item => ({
+        ...item,
+        selectedAsset: relationAsset(item),
+        decision: item.method === "embedding" ? "pending" : "accepted"
+      }));
+      state.unresolved = data.unresolved.map(item => ({ ...item, selectedAsset: "" }));
+      $("#analysisId").textContent = data.analysis_id;
+      $("#assetCount").textContent = data.subjects.length;
+      $("#aiModel").textContent = data.ai.model;
+      $("#aiSummary").textContent = `의미 비교 ${data.ai.semantic_tasks}건 · AI 자동 연결 ${data.ai.embedding_links}건 · 정확 경로 ${data.ai.deterministic_links}건`;
+      $("#aiThresholds").textContent = `유사도 ≥ ${data.ai.thresholds.min_similarity} · 1·2위 차이 ≥ ${data.ai.thresholds.min_margin}`;
+      $("#boundary").textContent = data.interpretation_boundary;
+      renderRelations();
+      renderUnresolved();
+      renderC2PA();
+      updateDerived();
+    }
+
+    function candidateOptions(relation) {
+      const candidates = relation.candidates?.length ? relation.candidates : [{ asset: relationAsset(relation), score: 1 }];
+      const unique = [...new Map(candidates.map(item => [item.asset, item])).values()];
+      if (!unique.some(item => item.asset === relation.selectedAsset)) unique.unshift({ asset: relation.selectedAsset, score: null });
+      return unique.map(item => `<option value="${esc(item.asset)}" ${item.asset === relation.selectedAsset ? "selected" : ""}>${esc(item.asset)}${item.score == null ? "" : ` · ${Number(item.score).toFixed(3)}`}</option>`).join("");
+    }
+
+    function renderRelations() {
+      $("#relationRows").innerHTML = state.relations.map((relation, index) => {
+        const evidence = relation.relation_type.startsWith("evidence:");
+        const endpoint = evidence ? relation.to : relation.from;
+        const type = evidence ? evidenceLabels[relation.relation_type.split(":", 2)[1]] : "결과물 구성";
+        return `<tr>
+          <td><span class="method ${relation.method === "embedding" ? "ai" : "exact"}">${relation.method === "embedding" ? "AI 의미 연결" : "정확 경로"}</span></td>
+          <td>${esc(type)}</td>
+          <td><select class="asset-choice" data-index="${index}" aria-label="${esc(type)} 자산 선택">${candidateOptions(relation)}</select></td>
+          <td><code>${esc(endpoint)}</code></td>
+          <td><select class="decision-choice" data-index="${index}" aria-label="${esc(type)} 관계 결정">
+            <option value="pending" ${relation.decision === "pending" ? "selected" : ""}>검토 필요</option>
+            <option value="accepted" ${relation.decision === "accepted" ? "selected" : ""}>확인</option>
+            <option value="rejected" ${relation.decision === "rejected" ? "selected" : ""}>제외</option>
+          </select></td>
+        </tr>`;
+      }).join("");
+      document.querySelectorAll(".asset-choice").forEach(select => select.addEventListener("change", event => {
+        const relation = state.relations[Number(event.target.dataset.index)];
+        relation.selectedAsset = event.target.value;
+        if (relation.method === "embedding") relation.decision = "pending";
+        renderRelations();
+        updateDerived();
+      }));
+      document.querySelectorAll(".decision-choice").forEach(select => select.addEventListener("change", event => {
+        state.relations[Number(event.target.dataset.index)].decision = event.target.value;
+        updateDerived();
+      }));
+    }
+
+    function renderUnresolved() {
+      const block = $("#unresolvedContent");
+      if (!state.unresolved.length) {
+        block.innerHTML = '<div class="empty">자동 연결 보류 항목이 없습니다.</div>';
+        return;
+      }
+      block.innerHTML = `<div class="table-wrap"><table><thead><tr><th>단서</th><th>이유</th><th>수동 연결</th></tr></thead><tbody>${state.unresolved.map((item, index) => {
+        const options = (item.candidates || []).map(candidate => `<option value="${esc(candidate.asset)}">${esc(candidate.asset)} · ${Number(candidate.score).toFixed(3)}</option>`).join("");
+        return `<tr><td><code>${esc(item.clue)}</code></td><td>${esc(item.reason)}</td><td><select class="unresolved-choice" data-index="${index}" ${options ? "" : "disabled"}><option value="">보류 유지</option>${options}</select></td></tr>`;
+      }).join("")}</tbody></table></div>`;
+      document.querySelectorAll(".unresolved-choice").forEach(select => select.addEventListener("change", event => {
+        state.unresolved[Number(event.target.dataset.index)].selectedAsset = event.target.value;
+        updateDerived();
+      }));
+    }
+
+    function effectiveRelations(includePending) {
+      const relations = state.relations
+        .filter(item => item.decision === "accepted" || (includePending && item.decision === "pending"))
+        .map(item => {
+          const evidence = item.relation_type.startsWith("evidence:");
+          return {
+            relation_type: item.relation_type,
+            from: evidence ? item.selectedAsset : item.from,
+            to: evidence ? item.to : item.selectedAsset,
+            original_method: item.method,
+            reviewer_decision: item.decision
+          };
+        });
+      for (const item of state.unresolved.filter(item => item.selectedAsset)) {
+        relations.push({
+          relation_type: item.relation_type,
+          from: item.direction === "evidence" ? item.selectedAsset : item.endpoint,
+          to: item.direction === "evidence" ? item.endpoint : item.selectedAsset,
+          original_method: "manual_from_unresolved",
+          reviewer_decision: "accepted"
+        });
+      }
+      return relations;
+    }
+
+    function computeMissing(relations) {
+      const provided = new Map();
+      for (const relation of relations) {
+        if (!relation.relation_type.startsWith("evidence:")) continue;
+        if (!provided.has(relation.from)) provided.set(relation.from, new Set());
+        provided.get(relation.from).add(relation.relation_type.split(":", 2)[1]);
+      }
+      const missing = [];
+      for (const subject of state.analysis.subjects.filter(item => item.origin_type !== "output")) {
+        const required = state.analysis.requirements[subject.origin_type] || [];
+        for (const kind of required) {
+          if (!provided.get(subject.path)?.has(kind)) missing.push({ asset: subject.path, evidence_type: kind });
+        }
+      }
+      return missing;
+    }
+
+    function renderMissing(missing, provisional) {
+      $("#missingNote").textContent = provisional ? "검토 대기 중인 AI 제안까지 포함한 잠정 계산입니다." : "확인·제외 결정에 따라 확정 계산했습니다.";
+      $("#missingCards").innerHTML = missing.length
+        ? missing.map(item => `<div class="issue"><strong>${esc(item.asset)}</strong><small>${esc(evidenceLabels[item.evidence_type] || item.evidence_type)} 증거가 연결되지 않음</small></div>`).join("")
+        : '<div class="empty" style="grid-column:1/-1">현재 관계 기준으로 필수 증거 누락이 없습니다.</div>';
+    }
+
+    function updateDerived() {
+      const pending = state.relations.filter(item => item.decision === "pending").length;
+      const relations = effectiveRelations(true);
+      const missing = computeMissing(relations);
+      $("#relationCount").textContent = relations.length;
+      $("#missingCount").textContent = missing.length;
+      $("#pendingCount").textContent = pending;
+      renderMissing(missing, pending > 0);
+      $("#exportButton").disabled = pending > 0;
+      $("#exportHint").textContent = pending > 0
+        ? `AI 의미 연결 ${pending}건을 확인하거나 제외해야 합니다.`
+        : "모든 AI 제안을 검토했습니다. 확인된 상태로 내보낼 수 있습니다.";
+    }
+
+    function renderC2PA() {
+      const content = $("#c2paContent");
+      if (!state.analysis.c2pa.length) {
+        content.innerHTML = '<div class="empty">C2PA 확인 대상 확장자의 자산이 없습니다.</div>';
+        return;
+      }
+      const label = value => ({
+        present: "있음", absent: "없음", valid: "유효", invalid: "손상",
+        unknown: "알 수 없음", not_applicable: "해당 없음", untrusted: "신뢰 목록 밖",
+        not_reported_untrusted: "불신 코드 없음", not_evaluated: "평가하지 않음",
+        ok: "판독 완료", unavailable: "도구 없음", timeout: "시간 초과",
+        unsupported_or_unreadable: "형식 판독 불가"
+      })[value] || value;
+      content.innerHTML = `<div class="table-wrap"><table><thead><tr><th>자산</th><th>도구 상태</th><th>매니페스트</th><th>무결성</th><th>서명자 신뢰</th><th>권리 허락</th></tr></thead><tbody>${state.analysis.c2pa.map(item => `<tr>
+        <td><code>${esc(item.path)}</code></td><td>${esc(label(item.tool_state))}</td><td>${esc(label(item.manifest_presence))}</td><td>${esc(label(item.integrity_state))}</td><td>${esc(label(item.signer_trust_state))}</td><td>${esc(label(item.rights_permission_state))}</td>
+      </tr>`).join("")}</tbody></table></div>`;
+    }
+
+    $("#exportButton").addEventListener("click", () => {
+      const pending = state.relations.filter(item => item.decision === "pending").length;
+      if (pending) return;
+      const relations = effectiveRelations(false);
+      const record = {
+        schema: "rightsledger.audit.v0.1",
+        analysis_id: state.analysis.analysis_id,
+        reviewed_at: new Date().toISOString(),
+        reviewer_id: "P01",
+        app_version: state.analysis.app_version,
+        ai: state.analysis.ai,
+        inventory: state.analysis.inventory,
+        subjects: state.analysis.subjects,
+        relations,
+        missing_evidence: computeMissing(relations),
+        unresolved: state.unresolved.filter(item => !item.selectedAsset).map(({ selectedAsset, ...item }) => item),
+        c2pa: state.analysis.c2pa,
+        legal_conclusions: [],
+        interpretation_boundary: state.analysis.interpretation_boundary
+      };
+      const blob = new Blob([JSON.stringify(record, null, 2) + "\n"], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `rightsledger_audit_${state.analysis.analysis_id}.json`;
+      link.click();
+      URL.revokeObjectURL(url);
+    });
+
+    refreshHealth();
+  </script>
+</body>
+</html>
