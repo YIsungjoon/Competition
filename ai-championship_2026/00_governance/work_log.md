@@ -398,3 +398,14 @@
 - OBSERVATION: 네 파일은 모두 1280×960이며 합계 약 1.6MB다. 기존 샘플의 P01~P04와 시간·장면 순서가 대응한다. lint·근거 검사 3개·프로덕션 빌드가 통과했고, 로컬 브라우저에서 새 버튼을 눌러 P01 사진과 합성 예시 안내가 결과 화면에 표시되는 것을 확인했다.
 - DECISION: 새 분석 로직은 만들지 않고 기존 `loadDemo` 고정 흐름만 재사용했다. 버튼과 결과 화면에는 AI 제작 이미지·고정 결과임을 명시한다.
 - 한계와 다음 작업: 이 샘플은 모델 품질 증거가 아니다. 실제 API 키가 준비되면 별도 동의 사진으로 실제 분석 경로를 검증한다.
+
+## WORK-036 — 공개 Competition 저장소 하위 폴더로 프로젝트 동기화
+
+- 날짜: 2026-09-14
+- 수행 작업: 로컬 프로젝트를 `YIsungjoon/Competition`의 `ai-championship_2026/` 아래에 병합하고 `main`에 커밋 `79d1f4a`를 푸시했다. 원격에 먼저 있던 `.AGENT`는 보존했다.
+- 이유: 사용자가 대회 프로젝트를 지정한 GitHub 저장소의 해당 폴더에 넣어 달라고 직접 요청했다.
+- 입력/출처: `SRC-099`, 사용자 지정 저장소 `https://github.com/YIsungjoon/Competition.git`
+- 공개 경계: GitHub API로 저장소가 `public`임을 확인했다. 업로드 전에 실제 키 패턴, `.env`, 50MB 초과 파일을 검사했다.
+- 제외 항목: 모든 중첩 `.git`, `node_modules`, `.vinext`, `.next`, `dist`, Wrangler·Sites 로컬 상태, Playwright 임시 상태, Python 캐시, `.DS_Store`, 실제 `.env`, `private_inputs`를 제외했다. `.env.example`은 빈 예시값이므로 포함했다.
+- OBSERVATION: 335개 파일, 약 5.4MB가 첫 커밋에 포함됐고 원격 `main`이 `27eb087`에서 `79d1f4a`로 이동했다. 비밀값 패턴과 50MB 초과 파일은 발견되지 않았다.
+- 한계와 다음 작업: 로컬 프로젝트 루트와 원격 저장소 루트의 경로 구조가 달라 로컬 저장소에 `origin`을 직접 연결하지 않았다. 이후 동기화도 `ai-championship_2026/` 경계를 유지해야 한다.
